@@ -1,0 +1,104 @@
+/* ============================================================
+   CÔTÉ BIEN N'ÊTRE — Design tokens
+   Toutes les valeurs sont définitives (voir brief).
+   Vert = couleur de marque (tout le site).
+   Bleu = RÉSERVÉ exclusivement à l'univers MEBP®.
+   ============================================================ */
+
+:root {
+  /* --- Vert « Sauge » : marque, univers bien-être --------- */
+  --green-50:  #F2F6F2;  /* fonds de section très clairs */
+  --green-100: #E0EBE2;  /* surfaces douces, séparateurs */
+  --green-200: #C2D6C6;  /* badges légers, hover surfaces claires */
+  --green-300: #9DBCA3;  /* illustrations, états désactivés colorés */
+  --green-400: #779E80;  /* accents secondaires */
+  --green-500: #5A8264;  /* PRIMAIRE de marque : boutons, liens, icônes */
+  --green-600: #47694F;  /* hover boutons primaires */
+  --green-700: #3A5440;  /* active/pressed, titres sur fond clair */
+  --green-800: #2F4334;  /* textes verts forts, footer */
+  --green-900: #21302E;  /* contrastes profonds */
+
+  /* --- Bleu « MEBP » : UNIQUEMENT univers MEBP® ----------- */
+  --blue-50:  #EDF3FA;
+  --blue-100: #D6E4F5;
+  --blue-200: #AFC9EB;
+  --blue-300: #82A9DD;
+  --blue-400: #5286CB;
+  --blue-500: #2E66B5;  /* PRIMAIRE MEBP : badge, CTA MEBP */
+  --blue-600: #234F8F;  /* hover MEBP */
+  --blue-700: #1C3F72;  /* active MEBP */
+  --blue-800: #173357;
+  --blue-900: #112740;
+
+  /* --- Neutres & surfaces -------------------------------- */
+  --surface-base: #FBFAF7;  /* fond général, blanc cassé chaud */
+  --surface-card: #FFFFFF;  /* cartes */
+  --surface-alt:  #F4F1EA;  /* sections alternées, sable */
+  --border:       #E7E2D8;  /* bordures, séparateurs */
+  --text-strong:  #2A2A28;  /* texte principal / titres */
+  --text-default: #44423D;  /* corps de texte */
+  --text-muted:   #6E6A62;  /* légendes, métadonnées */
+
+  /* --- États --------------------------------------------- */
+  --success:  #4E8C5B;
+  --error:    #B4452F;
+  --error-bg: #FBEDE9;
+  --focus-ring:      0 0 0 3px rgba(90, 130, 100, 0.35);  /* vert */
+  --focus-ring-mebp: 0 0 0 3px rgba(46, 102, 181, 0.35);  /* MEBP */
+
+  /* --- Typographie --------------------------------------- */
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-text: "Hanken Grotesk", system-ui, -apple-system, sans-serif;
+
+  /* Échelle fluide (mobile → desktop) via clamp */
+  --fs-display: clamp(2.25rem, 1.6rem + 3.2vw, 3.5rem);   /* 36 → 56 (échelle de référence) */
+  --lh-display: 1.08;
+  /* Accent éditorial : titres héros surdimensionnés (parti pris 2026) */
+  --fs-hero: clamp(3.25rem, 2rem + 6vw, 7rem);             /* 52 → 112 */
+  --lh-hero: 0.98;
+  --fs-h2: clamp(1.75rem, 1.4rem + 1.7vw, 2.5rem);         /* 28 → 40 */
+  --lh-h2: 1.15;
+  --fs-h3: clamp(1.375rem, 1.25rem + 0.6vw, 1.75rem);      /* 22 → 28 */
+  --lh-h3: 1.25;
+  --fs-lead: clamp(1.125rem, 1.05rem + 0.35vw, 1.25rem);   /* 18 → 20 */
+  --lh-lead: 1.6;
+  --fs-body: clamp(1rem, 0.97rem + 0.15vw, 1.0625rem);     /* 16 → 17 */
+  --lh-body: 1.65;
+  --fs-small: 0.875rem;   /* 14 */
+  --lh-small: 1.5;
+  --fs-overline: 0.8125rem; /* 13 */
+
+  /* --- Espacements (échelle 4px) ------------------------- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  --space-32: 128px;
+
+  /* --- Rayons -------------------------------------------- */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 24px;
+  --radius-pill: 999px;
+
+  /* --- Ombres -------------------------------------------- */
+  --shadow-sm: 0 1px 2px rgba(42, 42, 40, 0.06);
+  --shadow-md: 0 8px 24px rgba(42, 42, 40, 0.08);
+  --shadow-lg: 0 20px 48px rgba(42, 42, 40, 0.12);
+
+  /* --- Grille / layout ----------------------------------- */
+  --container-max: 1200px;
+  --gutter: 16px;            /* mobile */
+  --measure: 68ch;           /* largeur de ligne de texte */
+  --nav-h: 64px;
+}
+
+@media (min-width: 1024px) {
+  :root { --gutter: 24px; }
+}

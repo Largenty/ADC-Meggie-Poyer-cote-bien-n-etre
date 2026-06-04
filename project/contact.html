@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script>document.documentElement.classList.add('anim');</script>
+  <title>Contact | Côté Bien N’être — Brie-Comte-Robert</title>
+  <meta name="description" content="Contactez Côté Bien N’être à Brie-Comte-Robert : Shiatsu, massage et MEBP®. Réservez en ligne ou par téléphone." />
+  <meta name="theme-color" content="#2F4334" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/tokens.css" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Aller au contenu</a>
+
+  <header class="site-header" data-header>
+    <div class="container container--wide">
+      <nav class="nav" aria-label="Navigation principale">
+        <a class="brand" href="index.html" aria-label="Côté Bien N’être — accueil">
+          <img class="brand-logo" src="assets/logo-cbn.png" alt="Côté Bien N’être" width="60" height="60" />
+        </a>
+        <ul class="nav-links">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="apropos.html">À propos</a></li>
+          <li><a href="prestations.html">Prestations</a></li>
+          <li><a href="tarifs.html">Tarifs</a></li>
+          <li><a href="bon-cadeau.html">Bon cadeau</a></li>
+          <li><a href="contact.html" aria-current="page">Contact</a></li>
+        </ul>
+        <a class="btn btn--primary nav-cta" href="#reservation">Réserver un temps</a>
+        <button class="nav-toggle" data-nav-toggle aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+  <div class="mobile-menu" id="mobile-menu" data-mobile-menu aria-hidden="true" role="dialog" aria-label="Menu">
+    <div class="container">
+      <div class="mobile-menu__top">
+        <span class="brand" style="color:var(--green-700)">Côté Bien N’être</span>
+        <button class="nav-toggle" data-nav-close aria-label="Fermer le menu"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+      </div>
+      <nav class="mobile-menu__links" aria-label="Navigation mobile">
+        <a href="index.html"><span class="mm-num">01</span> Accueil</a>
+        <a href="apropos.html"><span class="mm-num">02</span> À propos</a>
+        <a href="prestations.html"><span class="mm-num">03</span> Prestations</a>
+        <a href="tarifs.html"><span class="mm-num">04</span> Tarifs</a>
+        <a href="bon-cadeau.html"><span class="mm-num">05</span> Bon cadeau</a>
+        <a href="contact.html" aria-current="page"><span class="mm-num">06</span> Contact</a>
+      </nav>
+      <a class="btn btn--primary" href="#reservation">Réserver un temps</a>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <!-- ============ EN-TÊTE DE PAGE ============ -->
+    <section class="page-hero">
+      <div class="container container--wide">
+        <div class="page-hero__grid">
+          <div class="page-hero__text reveal">
+            <p class="overline">Prenons rendez-vous</p>
+          <h1 class="display">Prendre <em>rendez-vous</em></h1>
+          <p class="lead">Le plus simple&nbsp;: réservez directement votre créneau en ligne. Une question avant de venir&nbsp;? Écrivez-moi.</p>
+          </div>
+          <div class="page-hero__media arch reveal" data-delay="1">
+            <img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?auto=format&fit=crop&w=1900&q=72" alt="Espace de soin accueillant" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ RÉSERVATION (EMPLACEMENT RESALIB) ============ -->
+    <section class="section" id="reservation" aria-labelledby="reservation-title">
+      <div class="container container--wide stack-lg">
+        <div class="reveal" style="max-width:60ch">
+          <p class="overline">Réservation en ligne</p>
+          <h2 id="reservation-title" style="margin-top:var(--space-4)">Réservez votre créneau</h2>
+        </div>
+        <!-- EMPLACEMENT RÉSERVÉ : widget / bouton Resalib. Remplacer ce bloc par l'iframe ou le script fourni par Resalib. -->
+        <div class="embed-slot reveal" data-delay="1">
+          <p class="embed-slot__title">Module de réservation Resalib</p>
+          <p>Emplacement réservé pour le widget Resalib (agenda en ligne).<br />Le bouton / l’iframe fourni par Resalib s’intègre ici.</p>
+          <div class="btn-group" style="justify-content:center;margin-top:var(--space-6)">
+            <a class="btn btn--primary" href="#" aria-label="Réserver via Resalib (à connecter)">Réserver via Resalib <span class="btn__arrow" aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FORMULAIRE + COORDONNÉES ============ -->
+    <section class="section section--soft" aria-labelledby="contact-title">
+      <div class="container container--wide">
+        <div class="concept" style="align-items:start">
+          <div class="stack reveal">
+            <p class="overline">Me contacter</p>
+            <h2 id="contact-title">Une question<br />avant de venir&nbsp;?</h2>
+            <p class="lead measure-sm">Écrivez-moi, je vous réponds au plus vite. Vous pouvez aussi m’appeler directement.</p>
+            <ul class="info-list">
+              <li>
+                <span class="icon-circle" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M5 4h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg></span>
+                <a href="tel:+33781130330">07 81 13 03 30</a>
+              </li>
+              <li>
+                <span class="icon-circle" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+                <a href="mailto:cotebiennetre@gmail.com">cotebiennetre@gmail.com</a>
+              </li>
+              <li>
+                <span class="icon-circle" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="2.4"/></svg></span>
+                <span style="font-weight:600;color:var(--text-strong)">6 Passage du Roi<br />77170 Brie-Comte-Robert</span>
+              </li>
+            </ul>
+          </div>
+
+          <form class="reveal" data-delay="1" data-contact-form novalidate aria-label="Formulaire de contact" style="background:var(--surface-card);border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);padding:clamp(24px,4vw,40px)">
+            <div class="field">
+              <label for="nom">Nom</label>
+              <input type="text" id="nom" name="nom" autocomplete="name" required />
+              <span class="field__error">Merci d’indiquer votre nom.</span>
+            </div>
+            <div class="field">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="email" autocomplete="email" required />
+              <span class="field__error">Merci d’indiquer une adresse e-mail valide.</span>
+            </div>
+            <div class="field">
+              <label for="tel">Téléphone <span class="opt">(optionnel)</span></label>
+              <input type="tel" id="tel" name="tel" autocomplete="tel" />
+            </div>
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" required></textarea>
+              <span class="field__error">Merci d’écrire quelques mots.</span>
+            </div>
+            <div class="consent">
+              <input type="checkbox" id="consent" name="consent" required />
+              <label for="consent">J’accepte que mes informations soient utilisées uniquement pour répondre à ma demande. Aucune donnée n’est conservée à d’autres fins.</label>
+            </div>
+            <button type="submit" class="btn btn--primary">Envoyer mon message</button>
+            <p class="form-status" data-form-status role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ OÙ ME TROUVER ============ -->
+    <section class="section" aria-labelledby="zone-title">
+      <div class="container container--wide stack-lg">
+        <div class="reveal" style="max-width:62ch">
+          <p class="overline">Où me trouver</p>
+          <h2 id="zone-title" style="margin-top:var(--space-4)">Brie-Comte-Robert <em class="it" style="font-family:var(--font-display)">et 20 km autour</em></h2>
+          <p class="lead measure">Cabinet au 6 Passage du Roi, 77170 Brie-Comte-Robert. J’interviens aussi dans un rayon de 20 km autour. <span class="small muted">[À compléter : déplacements à domicile&nbsp;? Horaires.]</span></p>
+        </div>
+        <div class="map-embed reveal" data-delay="1">
+          <iframe title="Carte — Côté Bien N’être, 6 Passage du Roi, 77170 Brie-Comte-Robert" src="https://www.google.com/maps?q=6+Passage+du+Roi,+77170+Brie-Comte-Robert,+France&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container container--wide">
+      <div class="footer-top">
+        <div><p class="footer-brand">Côté Bien N’être</p><p>Shiatsu, massage bien-être, femme enceinte et Technique MEBP®. Vous réservez du temps, j’adapte le soin.</p></div>
+        <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:+33781130330">07 81 13 03 30</a></li><li><a href="mailto:cotebiennetre@gmail.com">cotebiennetre@gmail.com</a></li><li><a href="#reservation">Prendre rendez-vous</a></li></ul></div>
+        <div class="footer-col"><h4>Navigation</h4><ul><li><a href="prestations.html">Prestations</a></li><li><a href="tarifs.html">Tarifs</a></li><li><a href="bon-cadeau.html">Bon cadeau</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      </div>
+      <div class="footer-bottom">
+        <span>Zone&nbsp;: Brie-Comte-Robert et 20 km autour · © <span data-year>2026</span> Côté Bien N’être</span>
+        <nav aria-label="Liens légaux"><a href="#">Mentions légales</a><a href="#">Confidentialité</a></nav>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/site.js"></script>
+</body>
+</html>
