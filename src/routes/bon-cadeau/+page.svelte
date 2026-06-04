@@ -12,7 +12,7 @@
 <Seo
   title="Bon cadeau bien-être | Côté Bien N'être — Brie-Comte-Robert"
   description="Offrez un bon cadeau bien-être : massage, shiatsu ou détente à Brie-Comte-Robert. Remise en mains propres ou envoi par mail/courrier. Paiement PayPal ou Paylib."
-  image="/images/ambiance/espace-soin.jpg"
+  image="/images/ambiance/espace-soin.webp"
 />
 
 <main id="main">
@@ -21,7 +21,7 @@
     overline="Bon cadeau"
     title="Offrez <em>du temps</em>"
     lead="Un bon cadeau Côté Bien N'être, c'est un vrai temps pour soi : la prestation de votre choix, à offrir tout simplement."
-    imgSrc="/images/ambiance/espace-soin.jpg"
+    imgSrc="/images/ambiance/espace-soin.webp"
     imgAlt="Geste doux et attentionné"
   />
 
@@ -72,7 +72,7 @@
     overline="Prêt à offrir&nbsp;?"
     title="Offrez un moment <em>rien qu'à elle.</em>"
     lead="Un vrai temps pour soi, à la bonne personne, au bon moment. Remplissez le formulaire et je prépare votre bon cadeau."
-    image="/images/prestations/massage-bien-etre.jpg"
+    image="/images/prestations/massage-bien-etre.webp"
     imageAlt="Moment de détente lors d'un soin"
     actions={[{ label: 'Demander un bon cadeau', href: '/contact', arrow: true }]}
   />

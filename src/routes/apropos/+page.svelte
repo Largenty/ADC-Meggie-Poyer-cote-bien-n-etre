@@ -14,7 +14,7 @@
 <Seo
   title="À propos — Meggie Poyers, praticienne shiatsu | Côté Bien N'être"
   description="Faites connaissance avec Meggie Poyers, praticienne shiatsu, massage bien-être et certifiée Technique MEBP® à Brie-Comte-Robert et 20 km autour."
-  image="/images/hero/apropos-tarifs.jpg"
+  image="/images/hero/apropos-tarifs.webp"
 />
 
 <main id="main">
@@ -23,7 +23,7 @@
     overline="À propos"
     title="Faisons <em>connaissance</em>"
     lead="Derrière Côté Bien N'être, une praticienne attentive : Meggie Poyers."
-    imgSrc="/images/hero/apropos-tarifs.jpg"
+    imgSrc="/images/hero/apropos-tarifs.webp"
     imgAlt="Ambiance calme du cabinet de soin"
   />
 
@@ -33,7 +33,7 @@
       <div class="about-intro">
         <div class="about-portrait arch--soft" use:reveal>
           <!-- TODO cliente : remplacer par le vrai portrait de Meggie -->
-          <img src="/images/about/portrait.jpg" alt="Meggie Poyers, praticienne en shiatsu et massage bien-être" />
+          <img src="/images/about/portrait.webp" alt="Meggie Poyers, praticienne en shiatsu et massage bien-être" loading="lazy" decoding="async" />
           <div class="about-portrait__badge">
             <MebpBadge blur />
           </div>
@@ -82,7 +82,7 @@
     overline="Un temps pour soi"
     title="Envie de <em>faire connaissance&nbsp;?</em>"
     lead="Réservez un créneau, ou écrivez-moi pour une première question."
-    image="/images/ambiance/espace-soin.jpg"
+    image="/images/ambiance/espace-soin.webp"
     imageAlt="Détail apaisé d'un espace de soin"
     sectionClass=""
     actions={[

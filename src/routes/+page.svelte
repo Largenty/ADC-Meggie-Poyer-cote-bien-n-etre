@@ -16,7 +16,7 @@
 <Seo
   title="Shiatsu & massage bien-être à Brie-Comte-Robert | Côté Bien N'être"
   description="Praticienne shiatsu, massage bien-être et femme enceinte à Brie-Comte-Robert (77). Vous réservez un temps, j'adapte le soin sur place. Note 5/5. Réservez en ligne."
-  image="/images/hero/accueil.jpg"
+  image="/images/hero/accueil.webp"
 />
 
 <main id="main">
@@ -24,7 +24,15 @@
   <!-- HÉRO -->
   <section class="home-hero">
     <div class="home-hero__bg">
-      <img use:parallax src="/images/hero/accueil.jpg" alt="Massage du dos en cabinet, mains de la praticienne, lumière douce et naturelle" />
+      <img
+        use:parallax
+        src="/images/hero/accueil.webp"
+        srcset="/images/hero/accueil-sm.webp 760w, /images/hero/accueil.webp 1500w"
+        sizes="100vw"
+        alt="Massage du dos en cabinet, mains de la praticienne, lumière douce et naturelle"
+        fetchpriority="high"
+        decoding="async"
+      />
     </div>
     <div class="home-hero__inner">
       <p class="overline overline--light" use:reveal>Shiatsu &amp; massage bien-être</p>
@@ -83,7 +91,7 @@
     overline="Un temps pour soi"
     title="Offrez-vous une vraie <em>pause.</em>"
     lead="Réservez votre créneau, ou découvrez les tarifs des séances."
-    image="/images/ambiance/espace-soin.jpg"
+    image="/images/ambiance/espace-soin.webp"
     imageAlt="Détail apaisé d'un espace de soin"
     actions={[
       { label: 'Réserver', href: site.booking },

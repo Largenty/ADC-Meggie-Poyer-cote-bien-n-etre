@@ -15,7 +15,7 @@
 <Seo
   title="Prestations : shiatsu, massage, MEBP® | Côté Bien N'être"
   description="Shiatsu, massage bien-être, massage femme enceinte et Technique MEBP® (enfants à besoins particuliers) à Brie-Comte-Robert. Vous réservez du temps, j'adapte le soin."
-  image="/images/hero/prestations.jpg"
+  image="/images/hero/prestations.webp"
 />
 
 <main id="main">
@@ -24,7 +24,7 @@
     overline="Ce que je vous propose"
     title="Des soins qui <em>s'adaptent</em> à vous"
     lead="Vous réservez un temps, je compose le soin : shiatsu, massage bien-être, ou les deux."
-    imgSrc="/images/hero/prestations.jpg"
+    imgSrc="/images/hero/prestations.webp"
     imgAlt="Mains posées lors d'un soin"
   />
 

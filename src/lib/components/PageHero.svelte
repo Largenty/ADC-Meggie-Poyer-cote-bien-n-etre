@@ -13,7 +13,7 @@
         <p class="lead">{lead}</p>
       </div>
       <div class="page-hero__media arch" use:reveal={1}>
-        <img src={imgSrc} alt={imgAlt} />
+        <img src={imgSrc} alt={imgAlt} width="1400" height="1050" fetchpriority="high" decoding="async" />
       </div>
     </div>
   </div>

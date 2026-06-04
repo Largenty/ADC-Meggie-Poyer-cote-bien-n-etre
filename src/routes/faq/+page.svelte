@@ -22,7 +22,7 @@
 <Seo
   title="Questions fréquentes (FAQ) | Côté Bien N'être — Brie-Comte-Robert"
   description="Shiatsu, massage bien-être, femme enceinte, Technique MEBP® : déroulé des séances, tarifs, réservation, paiement. Toutes vos questions à Brie-Comte-Robert."
-  image="/images/hero/prestations.jpg"
+  image="/images/hero/prestations.webp"
 />
 
 <svelte:head>
@@ -35,7 +35,7 @@
     overline="Questions fréquentes"
     title="Vos questions, <em>mes réponses</em>"
     lead="Le déroulé des séances, les tarifs, la réservation… Si vous ne trouvez pas votre réponse, écrivez-moi."
-    imgSrc="/images/hero/prestations.jpg"
+    imgSrc="/images/hero/prestations.webp"
     imgAlt="Espace de soin calme et lumineux"
   />
 
@@ -61,7 +61,7 @@
     overline="Une autre question&nbsp;?"
     title="Parlons-en <em>simplement.</em>"
     lead="Écrivez-moi ou réservez directement votre créneau, je m'occupe du reste."
-    image="/images/ambiance/espace-soin.jpg"
+    image="/images/ambiance/espace-soin.webp"
     imageAlt="Détail apaisé d'un espace de soin"
     actions={[
       { label: 'Réserver', href: site.booking },

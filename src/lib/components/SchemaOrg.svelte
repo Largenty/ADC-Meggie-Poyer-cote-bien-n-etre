@@ -11,7 +11,7 @@
     name: site.name,
     description: site.baseline,
     url: site.url,
-    image: site.url + '/images/hero/accueil.jpg',
+    image: site.url + '/images/hero/accueil.webp',
     logo: site.url + '/logo-cbn.png',
     telephone: site.phone.tel,
     email: site.email,

@@ -52,7 +52,7 @@
         </div>
       </div>
       <div class="care__media arch--soft">
-        <img src={image} alt={imageAlt} />
+        <img src={image} alt={imageAlt} loading="lazy" decoding="async" />
       </div>
     </div>
   </div>

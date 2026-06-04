@@ -12,7 +12,7 @@
 <Seo
   title="Tarifs des séances | Côté Bien N'être — Brie-Comte-Robert"
   description="Tarifs : massage bien-être (1 h, 65 €), shiatsu 70 €, massage femme enceinte 70 €, Technique MEBP®. Bons cadeaux et forfaits. Brie-Comte-Robert (77)."
-  image="/images/hero/apropos-tarifs.jpg"
+  image="/images/hero/apropos-tarifs.webp"
 />
 
 <main id="main">
@@ -21,7 +21,7 @@
     overline="Tarifs"
     title="Vous réservez <em>un temps</em>"
     lead="30 minutes ou 1 heure de massage bien-être, et j'adapte le soin sur place. Avec aussi des séances dédiées : Shiatsu, femme enceinte et Technique MEBP®."
-    imgSrc="/images/hero/apropos-tarifs.jpg"
+    imgSrc="/images/hero/apropos-tarifs.webp"
     imgAlt="Ambiance calme d'un espace de soin"
   />
 
@@ -49,7 +49,7 @@
     overline="Bon cadeau"
     title="Envie d'offrir un <em>moment&nbsp;?</em>"
     lead="Offrez le soin de son choix : massage, shiatsu ou moment de détente. Bon cadeau remis en main propre, par e-mail ou par courrier."
-    image="/images/ambiance/espace-soin.jpg"
+    image="/images/ambiance/espace-soin.webp"
     imageAlt="Détail apaisé d'un espace de soin"
     actions={[{ label: 'Découvrir le bon cadeau', href: '/bon-cadeau', variant: 'secondary', arrow: true }]}
   />

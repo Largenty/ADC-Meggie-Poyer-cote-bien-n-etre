@@ -67,7 +67,7 @@ export const blocs = [
     title: 'Shiatsu & massage bien-être',
     body:
       "Pressions, étirements, gestes lents : un moment pour relâcher les tensions et retrouver de l'énergie. Vous n'avez rien à décider à l'avance, on ajuste ensemble selon ce que votre corps demande.",
-    image: '/images/prestations/massage-bien-etre.jpg',
+    image: '/images/prestations/massage-bien-etre.webp',
     imageAlt: 'Séance de shiatsu et de massage bien-être',
     cta: { label: 'Réserver 30 min ou 1 h', href: site.booking },
     reverse: false,
@@ -81,7 +81,7 @@ export const blocs = [
     body:
       "Un soin tout en douceur pour soulager le dos, alléger les jambes et s'apaiser. Des positions confortables et adaptées, dans un cadre calme et sécurisant.",
     note: '[À compléter : précisions ou limitations selon le trimestre.]',
-    image: '/images/prestations/femme-enceinte.jpg',
+    image: '/images/prestations/femme-enceinte.webp',
     imageAlt: 'Soin doux pour femme enceinte',
     cta: { label: 'Réserver', href: site.booking },
     reverse: true,
@@ -96,7 +96,7 @@ export const blocs = [
       "La Technique MEBP® (Massage pour Enfants à Besoins Particuliers) est une approche certifiée, pensée pour le confort et l'apaisement de l'enfant.",
     note:
       "Je suis praticienne certifiée MEBP®. [À compléter : description officielle MEBP® et bienfaits validés, déroulé d'une séance, accompagnement des parents.]",
-    image: '/images/prestations/mebp.jpg',
+    image: '/images/prestations/mebp.webp',
     imageAlt: "Accompagnement d'un enfant en MEBP",
     cta: { label: 'Prendre contact pour une séance MEBP®', href: '/contact' },
     reverse: false,

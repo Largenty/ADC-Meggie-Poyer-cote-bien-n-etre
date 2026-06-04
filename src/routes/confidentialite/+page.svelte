@@ -8,7 +8,7 @@
 <Seo
   title="Politique de confidentialité | Côté Bien N'être"
   description="Politique de confidentialité et protection des données personnelles du site Côté Bien N'être, praticienne bien-être à Brie-Comte-Robert."
-  image="/images/hero/apropos-tarifs.jpg"
+  image="/images/hero/apropos-tarifs.webp"
 />
 
 <main id="main">
@@ -17,7 +17,7 @@
     overline="Données personnelles"
     title="Politique de <em>confidentialité</em>"
     lead="Comment vos données sont collectées, utilisées et protégées."
-    imgSrc="/images/hero/apropos-tarifs.jpg"
+    imgSrc="/images/hero/apropos-tarifs.webp"
     imgAlt="Ambiance calme du cabinet de soin"
   />
 

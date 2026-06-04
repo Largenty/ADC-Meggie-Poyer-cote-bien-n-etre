@@ -22,7 +22,7 @@
 {#if image}
   <article class="who-card" class:who-card--mebp={mebp} use:reveal={delay}>
     <div class="who-card__media arch">
-      <img src={image} alt={imageAlt} />
+      <img src={image} alt={imageAlt} loading="lazy" decoding="async" />
     </div>
     <h3>{title}</h3>
     <p>{text}</p>

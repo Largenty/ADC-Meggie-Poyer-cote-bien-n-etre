@@ -5,13 +5,13 @@
   // À placer en haut de chaque page.
   //   title       : titre complet de l'onglet / SERP
   //   description : meta description (~150-160 caractères)
-  //   image       : visuel de partage (chemin local, ex. /images/hero/accueil.jpg)
+  //   image       : visuel de partage (chemin local, ex. /images/hero/accueil.webp)
   //   type        : 'website' (défaut) ou 'article'
   //   noindex     : true pour exclure la page de l'indexation
   let {
     title,
     description,
-    image = '/images/hero/accueil.jpg',
+    image = '/images/hero/accueil.webp',
     type = 'website',
     noindex = false,
   } = $props();
