@@ -1,22 +1,16 @@
 <script>
-  import { page } from '$app/stores';
+  import { page } from '$app/state';
   import { afterNavigate } from '$app/navigation';
   import { onMount } from 'svelte';
-
-  const navLinks = [
-    { href: '/', label: 'Accueil', num: '01' },
-    { href: '/apropos', label: 'À propos', num: '02' },
-    { href: '/prestations', label: 'Prestations', num: '03' },
-    { href: '/tarifs', label: 'Tarifs', num: '04' },
-    { href: '/bon-cadeau', label: 'Bon cadeau', num: '05' },
-    { href: '/contact', label: 'Contact', num: '06' },
-  ];
+  import { navLinks } from '$lib/data/nav.js';
+  import { site } from '$lib/data/site.js';
+  import Icon from './Icon.svelte';
 
   const leftLinks = navLinks.slice(0, 3);
   const rightLinks = navLinks.slice(3);
 
-  let isSolid = false;
-  let menuOpen = false;
+  let isSolid = $state(false);
+  let menuOpen = $state(false);
 
   function updateSolid() {
     const isHome = window.location.pathname === '/';
@@ -38,68 +32,64 @@
     updateSolid();
   });
 
+  let closeBtn = $state(null);
+  let openBtn = $state(null);
+
   function openMenu() {
     menuOpen = true;
     document.body.style.overflow = 'hidden';
+    // Déplace le focus dans le dialogue (bouton fermer) après rendu.
+    requestAnimationFrame(() => closeBtn?.focus());
   }
   function closeMenu() {
     menuOpen = false;
     document.body.style.overflow = '';
+    // Rend le focus au bouton d'ouverture.
+    requestAnimationFrame(() => openBtn?.focus());
+  }
+  function onMenuKeydown(e) {
+    if (e.key === 'Escape') closeMenu();
   }
 
-  $: isHome = $page.url.pathname === '/';
-  $: currentPath = $page.url.pathname;
+  const isHome = $derived(page.url.pathname === '/');
+  const currentPath = $derived(page.url.pathname);
 </script>
 
 <header class="site-header" class:is-solid={isSolid}>
   <div class="container container--wide">
-    {#if isHome}
-      <!-- Split nav: logo centred, links left + right -->
-      <nav class="nav nav--split" aria-label="Navigation principale">
-        <ul class="nav-links nav-links--left">
-          {#each leftLinks as link}
-            <li><a href={link.href} aria-current={currentPath === link.href ? 'page' : undefined}>{link.label}</a></li>
-          {/each}
-        </ul>
-        <a class="brand" href="/" aria-label="Côté Bien N'être — accueil">
-          <img class="brand-logo" src="/logo-cbn.png" alt="Côté Bien N'être" width="60" height="60" />
-        </a>
-        <ul class="nav-links nav-links--right">
-          {#each rightLinks as link}
-            <li><a href={link.href} aria-current={currentPath === link.href ? 'page' : undefined}>{link.label}</a></li>
-          {/each}
-        </ul>
-        <button class="nav-toggle" onclick={openMenu} aria-label="Ouvrir le menu" aria-expanded={menuOpen} aria-controls="mobile-menu">
-          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-        </button>
-      </nav>
-    {:else}
-      <!-- Regular nav: logo left -->
-      <nav class="nav" aria-label="Navigation principale">
-        <a class="brand" href="/" aria-label="Côté Bien N'être — accueil">
-          <img class="brand-logo" src="/logo-cbn.png" alt="Côté Bien N'être" width="60" height="60" />
-        </a>
-        <ul class="nav-links">
-          {#each navLinks as link}
-            <li><a href={link.href} aria-current={currentPath === link.href ? 'page' : undefined}>{link.label}</a></li>
-          {/each}
-        </ul>
-        <a class="btn btn--primary nav-cta" href="/contact">Réserver un temps</a>
-        <button class="nav-toggle" onclick={openMenu} aria-label="Ouvrir le menu" aria-expanded={menuOpen} aria-controls="mobile-menu">
-          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-        </button>
-      </nav>
-    {/if}
+    <!-- Split nav: logo centred, links left + right (toutes les pages) -->
+    <nav class="nav nav--split" aria-label="Navigation principale">
+      <ul class="nav-links nav-links--left">
+        {#each leftLinks as link}
+          <li><a href={link.href} aria-current={currentPath === link.href ? 'page' : undefined}>{link.label}</a></li>
+        {/each}
+      </ul>
+      <a class="brand brand--stacked" href="/" aria-label="{site.name} — accueil">
+        <img class="brand-logo" src="/logo-cbn.png" alt="" width="60" height="60" />
+        <span class="brand-name">{site.name}</span>
+      </a>
+      <ul class="nav-links nav-links--right">
+        {#each rightLinks as link}
+          <li><a href={link.href} aria-current={currentPath === link.href ? 'page' : undefined}>{link.label}</a></li>
+        {/each}
+      </ul>
+      {#if !isHome}
+        <a class="btn btn--primary nav-cta nav-cta--split" href={site.booking} target="_blank" rel="noopener noreferrer">Réserver<span class="sr-only"> (nouvelle fenêtre)</span></a>
+      {/if}
+      <button class="nav-toggle" bind:this={openBtn} onclick={openMenu} aria-label="Ouvrir le menu" aria-expanded={menuOpen} aria-controls="mobile-menu">
+        <Icon name="menu" />
+      </button>
+    </nav>
   </div>
 </header>
 
 <!-- Mobile menu -->
-<div id="mobile-menu" class="mobile-menu" class:is-open={menuOpen} aria-hidden={!menuOpen} role="dialog" aria-label="Menu">
+<div id="mobile-menu" class="mobile-menu" class:is-open={menuOpen} inert={!menuOpen} aria-hidden={!menuOpen} role="dialog" aria-modal="true" aria-label="Menu" onkeydown={onMenuKeydown}>
   <div class="container">
     <div class="mobile-menu__top">
-      <span class="brand" style="color:var(--green-700)">Côté Bien N'être</span>
-      <button class="nav-toggle" onclick={closeMenu} aria-label="Fermer le menu">
-        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      <span class="brand" style="color:var(--green-700)">{site.name}</span>
+      <button class="nav-toggle" bind:this={closeBtn} onclick={closeMenu} aria-label="Fermer le menu">
+        <Icon name="close" />
       </button>
     </div>
     <nav class="mobile-menu__links" aria-label="Navigation mobile">
@@ -109,6 +99,6 @@
         </a>
       {/each}
     </nav>
-    <a class="btn btn--primary" href="/contact" onclick={closeMenu}>Réserver un temps</a>
+    <a class="btn btn--primary" href={site.booking} target="_blank" rel="noopener noreferrer" onclick={closeMenu}>Réserver un temps<span class="sr-only"> (nouvelle fenêtre)</span></a>
   </div>
 </div>

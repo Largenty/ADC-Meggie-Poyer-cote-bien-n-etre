@@ -1,25 +1,58 @@
-# CODING AGENTS: READ THIS FIRST
+# Côté Bien N'être — site vitrine
 
-This is a **handoff bundle** from Claude Design (claude.ai/design).
+Site vitrine de **Côté Bien N'être** (Meggie Poyers), praticienne en shiatsu, massage bien-être, massage femme enceinte et **Technique MEBP®** (massage pour enfants à besoins particuliers) à Brie-Comte-Robert (77).
 
-A user mocked up designs in HTML/CSS/JS using an AI design tool, then exported this bundle so a coding agent can implement the designs for real.
+Construit avec **SvelteKit 2 + Svelte 5**, généré en site **100 % statique** (`adapter-static`).
 
-## What you should do — IMPORTANT
+## Démarrer
 
-**Read the chat transcripts first.** There are 1 chat transcript(s) in `chats/`. The transcripts show the full back-and-forth between the user and the design assistant — they tell you **what the user actually wants** and **where they landed** after iterating. Don't skip them. The final HTML files are the output, but the chat is where the intent lives.
+```bash
+npm install
+npm run dev        # serveur de développement (http://localhost:5173)
+npm run build      # build de production statique → dossier build/
+npm run preview    # prévisualise le build de production
+```
 
-**Find the primary design file under `project/` and read it top to bottom.** The chat transcripts will tell you which file the user was last iterating on. Then **follow its imports**: open every file it pulls in (shared components, CSS, scripts) so you understand how the pieces fit together before you start implementing.
+## Structure
 
-**If anything is ambiguous, ask the user to confirm before you start implementing.** It's much cheaper to clarify scope up front than to build the wrong thing.
+```
+src/
+  lib/
+    components/    # composants réutilisables (Header, Footer, Seo, Button, etc.)
+    data/          # ← CONTENU ÉDITABLE (textes, prix, avis, FAQ, coordonnées)
+    actions.js     # animations (reveal au scroll, parallaxe)
+  routes/          # pages du site (une par dossier)
+  app.css          # design system (tokens) + styles globaux
+  app.html         # gabarit HTML racine
+static/
+  images/          # ← PHOTOS (déposer les visuels ici)
+  robots.txt, logo-cbn.png
+```
 
-## About the design files
+## Modifier le contenu (sans toucher au code)
 
-The design medium is **HTML/CSS/JS** — these are prototypes, not production code. Your job is to **recreate them pixel-perfectly** in whatever technology makes sense for the target codebase (React, Vue, native, whatever fits). Match the visual output; don't copy the prototype's internal structure unless it happens to fit.
+Tout le contenu se trouve dans **`src/lib/data/`**, en fichiers `.js` commentés :
 
-**Don't render these files in a browser or take screenshots unless the user asks you to.** Everything you need — dimensions, colors, layout rules — is spelled out in the source. Read the HTML and CSS directly; a screenshot won't tell you anything they don't.
+| Fichier | Contenu |
+|---|---|
+| `site.js` | nom, téléphone, e-mail, adresse, zone, **lien de réservation Resalib**, infos SEO |
+| `nav.js` | liens du menu |
+| `prestations.js` | **source unique** : tarifs (page Tarifs) + blocs (page Prestations) |
+| `reviews.js` | avis clients |
+| `faq.js` | foire aux questions |
+| `steps.js`, `values.js`, `audiences.js` | contenus des sections |
 
-## Bundle contents
+Les **photos** se déposent dans `static/images/` et se référencent via leur chemin (ex. `/images/hero/accueil.jpg`) depuis les fichiers data.
 
-- `README.md` — this file
-- `chats/` — conversation transcripts (read these!)
-- `project/` — the `Megg test 2` project files (HTML prototypes, assets, components)
+> Des emplacements `[À compléter : …]` signalent les informations à fournir par la praticienne (statut juridique, hébergeur, certains prix, précisions soins).
+
+## SEO & accessibilité
+
+- Données structurées JSON-LD (`LocalBusiness`, `FAQPage`), `sitemap.xml`, `robots.txt`, balises canonical + Open Graph par page (composant `Seo`).
+- Contrastes, focus visibles, formulaire accessible, navigation clavier (objectif RGAA — textes AAA, interface AA).
+
+L'URL canonique du site est définie dans `src/lib/data/site.js` (`url`).
+
+## Déploiement
+
+Site statique : déployable sur tout hébergeur de fichiers statiques. Un `vercel.json` est fourni pour un déploiement direct sur Vercel (build `npm run build`, dossier `build/`, URLs propres).

@@ -1,20 +1,27 @@
 <script>
   import { reveal } from '$lib/actions.js';
   import PageHero from '$lib/components/PageHero.svelte';
+  import PriceList from '$lib/components/PriceList.svelte';
+  import CtaSection from '$lib/components/CtaSection.svelte';
+  import Button from '$lib/components/Button.svelte';
+  import { tarifs } from '$lib/data/prestations.js';
+  import { site } from '$lib/data/site.js';
+  import Seo from '$lib/components/Seo.svelte';
 </script>
 
-<svelte:head>
-  <title>Tarifs Shiatsu &amp; massage | Côté Bien N'être</title>
-  <meta name="description" content="Tous les tarifs des séances Shiatsu, massage bien-être, femme enceinte et MEBP® à Brie-Comte-Robert. Réservez en ligne." />
-</svelte:head>
+<Seo
+  title="Tarifs des séances | Côté Bien N'être — Brie-Comte-Robert"
+  description="Tarifs : massage bien-être (1 h, 65 €), shiatsu 70 €, massage femme enceinte 70 €, Technique MEBP®. Bons cadeaux et forfaits. Brie-Comte-Robert (77)."
+  image="/images/hero/apropos-tarifs.jpg"
+/>
 
 <main id="main">
 
   <PageHero
     overline="Tarifs"
     title="Vous réservez <em>un temps</em>"
-    lead="30 minutes ou 1 heure. Le soin est adapté sur place, sans supplément de « technique »."
-    imgSrc="https://images.unsplash.com/photo-1620733723572-11c53f73a416?auto=format&fit=crop&w=1900&q=72"
+    lead="30 minutes ou 1 heure de massage bien-être, et j'adapte le soin sur place. Avec aussi des séances dédiées : Shiatsu, femme enceinte et Technique MEBP®."
+    imgSrc="/images/hero/apropos-tarifs.jpg"
     imgAlt="Ambiance calme d'un espace de soin"
   />
 
@@ -22,62 +29,29 @@
   <section class="section">
     <div class="container container--wide">
       <div class="concept" style="align-items:start">
-        <div class="stack" use:reveal style="position:sticky;top:96px">
+        <div class="stack sticky-aside" use:reveal>
           <p class="overline">En clair</p>
-          <h2>Un format,<br />pas un menu</h2>
-          <p class="lead measure-sm">Choisissez un format ; je compose le soin sur place selon votre journée.</p>
-          <div class="btn-group"><a class="btn btn--primary" href="/contact">Réserver un créneau <span class="btn__arrow" aria-hidden="true">→</span></a></div>
+          <h2>Du temps,<br />pas un menu</h2>
+          <p class="lead measure-sm">Pour le massage bien-être, choisissez surtout un format. Sur place, j'ajuste mes gestes à ce que votre corps demande ce jour-là : shiatsu, pressions, étirements.</p>
+          <div class="btn-group"><Button href={site.booking} arrow>Réserver un créneau</Button></div>
         </div>
 
-        <div use:reveal={1}>
-          <div class="price-list">
-            <div class="price-row">
-              <span class="price-row__idx">01</span>
-              <span class="price-row__label"><span class="name">Séance 30 min</span><span class="meta">Format court — détente ciblée</span></span>
-              <span class="price-row__price">[ — €]</span>
-            </div>
-            <div class="price-row">
-              <span class="price-row__idx">02</span>
-              <span class="price-row__label"><span class="name">Séance 1 h</span><span class="meta">Format complet — soin en profondeur</span></span>
-              <span class="price-row__price">[ — €]</span>
-            </div>
-            <div class="price-row">
-              <span class="price-row__idx">03</span>
-              <span class="price-row__label"><span class="name">Séance Shiatsu</span><span class="meta">[À compléter : durée]</span></span>
-              <span class="price-row__price">[ — €]</span>
-            </div>
-            <div class="price-row">
-              <span class="price-row__idx">04</span>
-              <span class="price-row__label"><span class="name">Massage femme enceinte</span><span class="meta">[À compléter : durée]</span></span>
-              <span class="price-row__price">[ — €]</span>
-            </div>
-            <div class="price-row price-row--mebp">
-              <span class="price-row__idx">05</span>
-              <span class="price-row__label"><span class="name">Séance MEBP® (enfant)</span><span class="meta">Massage pour enfants à besoins particuliers · [durée]</span></span>
-              <span class="price-row__price">[ — €]</span>
-            </div>
-          </div>
-          <p class="price-note">Tarifs susceptibles d'évoluer. <span class="muted">[À compléter : moyens de paiement acceptés.]</span></p>
+        <div>
+          <PriceList items={tarifs} />
+          <p class="price-note">Possibilité de <strong>bons cadeaux</strong> et de <strong>forfaits</strong> : n'hésitez pas à me contacter. Certaines mutuelles remboursent les séances de Shiatsu.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ENCART BON CADEAU -->
-  <section class="section section--alt">
-    <div class="container container--wide">
-      <div class="care" use:reveal>
-        <div class="stack">
-          <p class="overline">Bon cadeau</p>
-          <h2 class="concept__title" style="font-size:clamp(1.875rem,1.2rem+3vw,3.25rem)">Envie d'offrir un <em>moment&nbsp;?</em></h2>
-          <p class="lead measure">Offrez un vrai temps pour soi, 30 minutes ou 1 heure, soin adapté sur place.</p>
-          <div class="btn-group"><a class="btn btn--secondary" href="/bon-cadeau">Découvrir le bon cadeau <span class="btn__arrow" aria-hidden="true">→</span></a></div>
-        </div>
-        <div class="care__media arch--soft">
-          <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1100&q=72" alt="Détail apaisé d'un espace de soin" />
-        </div>
-      </div>
-    </div>
-  </section>
+  <CtaSection
+    overline="Bon cadeau"
+    title="Envie d'offrir un <em>moment&nbsp;?</em>"
+    lead="Offrez le soin de son choix : massage, shiatsu ou moment de détente. Bon cadeau remis en main propre, par e-mail ou par courrier."
+    image="/images/ambiance/espace-soin.jpg"
+    imageAlt="Détail apaisé d'un espace de soin"
+    actions={[{ label: 'Découvrir le bon cadeau', href: '/bon-cadeau', variant: 'secondary', arrow: true }]}
+  />
 
 </main>

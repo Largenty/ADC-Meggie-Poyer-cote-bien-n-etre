@@ -1,20 +1,27 @@
 <script>
   import { reveal } from '$lib/actions.js';
   import PageHero from '$lib/components/PageHero.svelte';
+  import Steps from '$lib/components/Steps.svelte';
+  import Button from '$lib/components/Button.svelte';
+  import Icon from '$lib/components/Icon.svelte';
+  import CtaSection from '$lib/components/CtaSection.svelte';
+  import { giftSteps } from '$lib/data/steps.js';
+  import Seo from '$lib/components/Seo.svelte';
 </script>
 
-<svelte:head>
-  <title>Bon cadeau bien-être | Côté Bien N'être</title>
-  <meta name="description" content="Offrez un moment de détente : bon cadeau pour une séance de Shiatsu ou de massage bien-être à Brie-Comte-Robert." />
-</svelte:head>
+<Seo
+  title="Bon cadeau bien-être | Côté Bien N'être — Brie-Comte-Robert"
+  description="Offrez un bon cadeau bien-être : massage, shiatsu ou détente à Brie-Comte-Robert. Remise en mains propres ou envoi par mail/courrier. Paiement PayPal ou Paylib."
+  image="/images/ambiance/espace-soin.jpg"
+/>
 
 <main id="main">
 
   <PageHero
     overline="Bon cadeau"
     title="Offrez <em>du temps</em>"
-    lead="Un bon cadeau Côté Bien N'être, c'est un vrai temps pour soi : 30 minutes ou 1 heure, soin adapté sur place."
-    imgSrc="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1900&q=72"
+    lead="Un bon cadeau Côté Bien N'être, c'est un vrai temps pour soi : la prestation de votre choix, à offrir tout simplement."
+    imgSrc="/images/ambiance/espace-soin.jpg"
     imgAlt="Geste doux et attentionné"
   />
 
@@ -25,28 +32,49 @@
         <div class="stack" use:reveal>
           <p class="overline">Comment ça marche</p>
           <h2>En trois<br />étapes</h2>
-          <p class="lead measure-sm">Simple et rapide — et vous offrez un vrai moment de détente.</p>
-          <div class="btn-group"><a class="btn btn--primary" href="/contact">Demander un bon cadeau <span class="btn__arrow" aria-hidden="true">→</span></a></div>
+          <p class="lead measure-sm">Pour offrir un bon cadeau, il suffit de remplir le formulaire de contact. Je m'occupe du reste.</p>
+          <div class="btn-group"><Button href="/contact" arrow>Demander un bon cadeau</Button></div>
         </div>
-        <div class="steps" use:reveal={1}>
-          <div class="step"><span class="step__num">01</span><div><h3>Vous choisissez</h3><p class="muted">Le format qui fera plaisir — 30 minutes ou 1 heure.</p></div></div>
-          <div class="step"><span class="step__num">02</span><div><h3>Vous remplissez</h3><p class="muted">Le formulaire de demande, en quelques secondes.</p></div></div>
-          <div class="step"><span class="step__num">03</span><div><h3>Je vous envoie le bon</h3><p class="muted">Prêt à offrir. <span class="small">[À compléter : format papier/PDF, délai d'envoi.]</span></p></div></div>
-        </div>
+        <Steps steps={giftSteps} />
       </div>
-      <p class="small muted" use:reveal style="margin-top:var(--space-12)">[À compléter : durée de validité du bon.]</p>
     </div>
   </section>
 
-  <!-- CITATION -->
-  <section class="section section--deep">
+  <!-- DÉTAILS : À PRÉCISER + REMISE -->
+  <section class="section section--soft">
     <div class="container container--wide">
-      <figure use:reveal style="margin:0;max-width:24ch">
-        <span class="quote__mark" aria-hidden="true">"</span>
-        <blockquote class="quote">Offrez un moment <em>rien qu'à elle.</em></blockquote>
-        <figcaption class="quote__cite">Un temps pour soi, soin adapté sur place</figcaption>
-      </figure>
+      <div class="concept" style="align-items:start">
+        <div class="stack" use:reveal>
+          <p class="overline">À préciser dans le formulaire</p>
+          <h2 style="margin-bottom:var(--space-8)">Ce dont j'ai besoin</h2>
+          <ul class="check-list">
+            <li><Icon name="check" size="22" /> La prestation choisie</li>
+            <li><Icon name="check" size="22" /> Le prénom de la personne à qui vous l'offrez</li>
+            <li><Icon name="check" size="22" /> Votre prénom</li>
+            <li><Icon name="check" size="22" /> Un message, si vous souhaitez que je l'écrive pour vous</li>
+          </ul>
+        </div>
+        <div class="stack" use:reveal={1}>
+          <p class="overline">Remise &amp; paiement</p>
+          <h2 style="margin-bottom:var(--space-8)">Comment le recevoir</h2>
+          <ul class="info-list">
+            <li><span class="icon-circle" aria-hidden="true"><Icon name="pin" /></span> Remise en mains propres au cabinet</li>
+            <li><span class="icon-circle" aria-hidden="true"><Icon name="mail" /></span> Envoi par e-mail ou courrier, après paiement</li>
+          </ul>
+          <p class="small muted">Paiement par PayPal ou Paylib.</p>
+        </div>
+      </div>
     </div>
   </section>
+
+  <!-- APPEL FINAL -->
+  <CtaSection
+    overline="Prêt à offrir&nbsp;?"
+    title="Offrez un moment <em>rien qu'à elle.</em>"
+    lead="Un vrai temps pour soi, à la bonne personne, au bon moment. Remplissez le formulaire et je prépare votre bon cadeau."
+    image="/images/prestations/massage-bien-etre.jpg"
+    imageAlt="Moment de détente lors d'un soin"
+    actions={[{ label: 'Demander un bon cadeau', href: '/contact', arrow: true }]}
+  />
 
 </main>

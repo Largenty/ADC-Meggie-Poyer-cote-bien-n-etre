@@ -1,0 +1,43 @@
+<script>
+  import { page } from '$app/state';
+  import { site } from '$lib/data/site.js';
+  // Métadonnées SEO d'une page : titre, description, canonical, Open Graph, Twitter.
+  // À placer en haut de chaque page.
+  //   title       : titre complet de l'onglet / SERP
+  //   description : meta description (~150-160 caractères)
+  //   image       : visuel de partage (chemin local, ex. /images/hero/accueil.jpg)
+  //   type        : 'website' (défaut) ou 'article'
+  //   noindex     : true pour exclure la page de l'indexation
+  let {
+    title,
+    description,
+    image = '/images/hero/accueil.jpg',
+    type = 'website',
+    noindex = false,
+  } = $props();
+
+  const canonical = $derived(site.url + page.url.pathname);
+  const ogImage = $derived(site.url + image);
+</script>
+
+<svelte:head>
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+  {#if noindex}<meta name="robots" content="noindex, nofollow" />{/if}
+
+  <!-- Open Graph -->
+  <meta property="og:type" content={type} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:site_name" content={site.name} />
+  <meta property="og:locale" content="fr_FR" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
+</svelte:head>
