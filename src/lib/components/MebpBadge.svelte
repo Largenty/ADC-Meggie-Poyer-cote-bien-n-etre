@@ -7,5 +7,5 @@
 
 <span class="badge badge--mebp" style={blur ? 'backdrop-filter:blur(4px)' : ''}>
   <Icon name="check" size="18" />
-  Praticienne certifiée MEBP®
+  Praticienne certifiée Technique MEBP®
 </span>

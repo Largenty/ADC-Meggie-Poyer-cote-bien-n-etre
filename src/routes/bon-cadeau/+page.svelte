@@ -11,7 +11,7 @@
 
 <Seo
   title="Bon cadeau bien-être | Côté Bien N'être — Brie-Comte-Robert"
-  description="Offrez un bon cadeau bien-être : massage, shiatsu ou détente à Brie-Comte-Robert. Remise en mains propres ou envoi par mail/courrier. Paiement PayPal ou Paylib."
+  description="Offrez un bon cadeau bien-être : massage, shiatsu ou détente à Brie-Comte-Robert. Valable 6 mois. Remise en mains propres au cabinet ou envoi par e-mail. Paiement Wero, virement, CB ou chèque."
   image="/images/ambiance/espace-soin.webp"
 />
 
@@ -58,10 +58,10 @@
           <p class="overline">Remise &amp; paiement</p>
           <h2 style="margin-bottom:var(--space-8)">Comment le recevoir</h2>
           <ul class="info-list">
-            <li><span class="icon-circle" aria-hidden="true"><Icon name="pin" /></span> Remise en mains propres au cabinet</li>
-            <li><span class="icon-circle" aria-hidden="true"><Icon name="mail" /></span> Envoi par e-mail ou courrier, après paiement</li>
+            <li><span class="icon-circle" aria-hidden="true"><Icon name="pin" /></span> À venir récupérer au cabinet</li>
+            <li><span class="icon-circle" aria-hidden="true"><Icon name="mail" /></span> Ou envoi par e-mail, après paiement</li>
           </ul>
-          <p class="small muted">Paiement par PayPal ou Paylib.</p>
+          <p class="small muted">Valable 6 mois. Paiement par Wero, virement, carte bancaire ou chèque.</p>
         </div>
       </div>
     </div>

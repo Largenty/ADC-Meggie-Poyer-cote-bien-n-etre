@@ -32,8 +32,7 @@
     <div class="container container--wide">
       <div class="about-intro">
         <div class="about-portrait arch--soft" use:reveal>
-          <!-- TODO cliente : remplacer par le vrai portrait de Meggie -->
-          <img src="/images/about/portrait.webp" alt="Meggie Poyers, praticienne en shiatsu et massage bien-être" loading="lazy" decoding="async" />
+          <img src="/images/about/portrait.webp" alt="Meggie Poyers, praticienne, lors d'une séance de Technique MEBP® auprès d'un enfant" loading="lazy" decoding="async" />
           <div class="about-portrait__badge">
             <MebpBadge blur />
           </div>
@@ -83,7 +82,7 @@
     title="Envie de <em>faire connaissance&nbsp;?</em>"
     lead="Réservez un créneau, ou écrivez-moi pour une première question."
     image="/images/ambiance/espace-soin.webp"
-    imageAlt="Détail apaisé d'un espace de soin"
+    imageAlt="Le cabinet de soin, ambiance calme et naturelle"
     sectionClass=""
     actions={[
       { label: 'Réserver', href: site.booking },

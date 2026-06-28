@@ -2,6 +2,7 @@
   import { reveal } from '$lib/actions.js';
   import Button from './Button.svelte';
   import MebpBadge from './MebpBadge.svelte';
+  import MebpNotice from './MebpNotice.svelte';
   // Bloc « prestation » : texte + image côte à côte (page Prestations).
   //  Toutes les valeurs viennent d'un objet de src/lib/data/prestations.js (blocs).
   //  reverse : inverse texte/image. mebp : accent bleu + zone dédiée.
@@ -55,5 +56,8 @@
         <img src={image} alt={imageAlt} loading="lazy" decoding="async" />
       </div>
     </div>
+
+    <!-- Avis de propriété : en bas de la section MEBP® uniquement. -->
+    {#if mebp}<MebpNotice />{/if}
   </div>
 </section>

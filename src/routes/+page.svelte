@@ -29,7 +29,7 @@
         src="/images/hero/accueil.webp"
         srcset="/images/hero/accueil-sm.webp 760w, /images/hero/accueil.webp 1500w"
         sizes="100vw"
-        alt="Massage du dos en cabinet, mains de la praticienne, lumière douce et naturelle"
+        alt="Le cabinet de soin Côté Bien N'être à Brie-Comte-Robert : table de massage, fauteuil et décor naturel aux tons verts"
         fetchpriority="high"
         decoding="async"
       />
@@ -92,7 +92,7 @@
     title="Offrez-vous une vraie <em>pause.</em>"
     lead="Réservez votre créneau, ou découvrez les tarifs des séances."
     image="/images/ambiance/espace-soin.webp"
-    imageAlt="Détail apaisé d'un espace de soin"
+    imageAlt="Le cabinet de soin, ambiance calme et naturelle"
     actions={[
       { label: 'Réserver', href: site.booking },
       { label: 'Voir les tarifs', href: '/tarifs', variant: 'secondary' },
