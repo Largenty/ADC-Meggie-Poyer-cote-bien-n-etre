@@ -5,13 +5,16 @@
   // À placer en haut de chaque page.
   //   title       : titre complet de l'onglet / SERP
   //   description : meta description (~150-160 caractères)
-  //   image       : visuel de partage (chemin local, ex. /images/hero/accueil.webp)
+  //   image       : visuel de partage. Par défaut la carte sociale brandée
+  //                 /og-image.jpg (1200×630, JPG). IMPORTANT : pour les aperçus
+  //                 de lien (WhatsApp, Facebook…), utilisez un JPG/PNG — le WebP
+  //                 n'est pas fiable sur WhatsApp.
   //   type        : 'website' (défaut) ou 'article'
   //   noindex     : true pour exclure la page de l'indexation
   let {
     title,
     description,
-    image = '/images/hero/accueil.webp',
+    image = '/og-image.jpg',
     type = 'website',
     noindex = false,
   } = $props();
@@ -32,6 +35,11 @@
   <meta property="og:description" content={description} />
   <meta property="og:url" content={canonical} />
   <meta property="og:image" content={ogImage} />
+  <meta property="og:image:secure_url" content={ogImage} />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content={site.name} />
   <meta property="og:site_name" content={site.name} />
   <meta property="og:locale" content="fr_FR" />
 

@@ -8,7 +8,6 @@
 <Seo
   title="Mentions légales | Côté Bien N'être"
   description="Mentions légales du site Côté Bien N'être, praticienne bien-être à Brie-Comte-Robert."
-  image="/images/hero/apropos-tarifs.webp"
 />
 
 <main id="main">

@@ -22,7 +22,6 @@
 <Seo
   title="Questions fréquentes (FAQ) | Côté Bien N'être — Brie-Comte-Robert"
   description="Shiatsu, massage bien-être, femme enceinte, Technique MEBP® : déroulé des séances, tarifs, réservation, paiement. Toutes vos questions à Brie-Comte-Robert."
-  image="/images/hero/prestations.webp"
 />
 
 <svelte:head>

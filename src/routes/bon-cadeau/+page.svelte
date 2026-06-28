@@ -12,7 +12,6 @@
 <Seo
   title="Bon cadeau bien-être | Côté Bien N'être — Brie-Comte-Robert"
   description="Offrez un bon cadeau bien-être : massage, shiatsu ou détente à Brie-Comte-Robert. Valable 6 mois. Remise en mains propres au cabinet ou envoi par e-mail. Paiement Wero, virement, CB ou chèque."
-  image="/images/ambiance/espace-soin.webp"
 />
 
 <main id="main">

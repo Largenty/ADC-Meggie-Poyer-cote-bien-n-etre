@@ -17,7 +17,7 @@
     email: site.email,
     priceRange: site.priceRange,
     currenciesAccepted: 'EUR',
-    paymentAccepted: 'PayPal, Paylib, espèces',
+    paymentAccepted: 'Espèces, carte bancaire, virement, chèque, Wero',
     address: {
       '@type': 'PostalAddress',
       streetAddress: site.address.street,

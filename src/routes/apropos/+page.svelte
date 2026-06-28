@@ -14,7 +14,6 @@
 <Seo
   title="À propos — Meggie Poyers, praticienne shiatsu | Côté Bien N'être"
   description="Faites connaissance avec Meggie Poyers, praticienne shiatsu, massage bien-être et certifiée Technique MEBP® à Brie-Comte-Robert et 20 km autour."
-  image="/images/hero/apropos-tarifs.webp"
 />
 
 <main id="main">

@@ -16,7 +16,6 @@
 <Seo
   title="Shiatsu & massage bien-être à Brie-Comte-Robert | Côté Bien N'être"
   description="Praticienne shiatsu, massage bien-être et femme enceinte à Brie-Comte-Robert (77). Vous réservez un temps, j'adapte le soin sur place. Note 5/5. Réservez en ligne."
-  image="/images/hero/accueil.webp"
 />
 
 <main id="main">

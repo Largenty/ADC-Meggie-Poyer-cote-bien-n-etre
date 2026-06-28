@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.cotebiennetre.fr/sitemap.xml
+Sitemap: https://adc-meggie-poyer-cote-bien-n-etre.vercel.app/sitemap.xml

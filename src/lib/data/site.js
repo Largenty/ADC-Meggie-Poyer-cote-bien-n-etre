@@ -26,9 +26,14 @@ export const site = {
   booking: 'https://www.resalib.fr/praticien/27195-cote-bien-n-etre-meggie-poyers-praticien-shiatsu-brie-comte-robert',
 
   // --- SEO / données structurées ---
-  // URL canonique du site (sans / final). Sert aux balises canonical,
-  // Open Graph et au sitemap.
-  url: 'https://www.cotebiennetre.fr',
+  // URL où le site est RÉELLEMENT servi (sans / final). Sert aux balises
+  // canonical, Open Graph (aperçus de lien) et au sitemap.
+  // ⚠️ Pour l'instant le site est déployé sur Vercel ; cotebiennetre.fr pointe
+  //    encore sur l'ancien Wix. On utilise donc l'URL Vercel, sinon l'og:image
+  //    (aperçu WhatsApp/Facebook) renvoie un 404.
+  // ➜ À REPASSER sur 'https://www.cotebiennetre.fr' (+ robots.txt) une fois le
+  //    domaine branché sur Vercel.
+  url: 'https://adc-meggie-poyer-cote-bien-n-etre.vercel.app',
   // Coordonnées GPS du cabinet (Brie-Comte-Robert). [À affiner si besoin]
   geo: { lat: 48.6925, lng: 2.6097 },
   // Avis vérifiés Resalib (note moyenne et nombre).
