@@ -22,7 +22,7 @@
 
   <section class="section">
     <div class="container">
-      <div class="stack measure" use:reveal>
+      <div class="stack" use:reveal>
         <div>
           <h2>Responsable du traitement</h2>
           <p>Les données collectées sur ce site sont traitées par {site.name} — Meggie Poyers, joignable à l'adresse <a href="mailto:{site.email}">{site.email}</a>.</p>

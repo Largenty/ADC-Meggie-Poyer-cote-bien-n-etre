@@ -9,6 +9,7 @@
   const options = [
     { value: '30 minutes', big: '30', unit: 'min', label: 'Une parenthèse' },
     { value: '1 heure', big: '1', unit: 'h', label: 'Un vrai relâchement' },
+    { value: '1 h 30', big: '1', unit: 'h30', label: 'Un moment complet' },
   ];
   let selected = $state('1 heure');
 </script>

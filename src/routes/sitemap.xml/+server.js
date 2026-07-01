@@ -7,6 +7,8 @@ const pages = [
   { path: '/', priority: '1.0', changefreq: 'monthly' },
   { path: '/apropos', priority: '0.8', changefreq: 'monthly' },
   { path: '/prestations', priority: '0.9', changefreq: 'monthly' },
+  { path: '/prestations/shiatsu', priority: '0.8', changefreq: 'monthly' },
+  { path: '/prestations/mebp', priority: '0.8', changefreq: 'monthly' },
   { path: '/tarifs', priority: '0.9', changefreq: 'monthly' },
   { path: '/bon-cadeau', priority: '0.7', changefreq: 'monthly' },
   { path: '/faq', priority: '0.7', changefreq: 'monthly' },

@@ -26,7 +26,7 @@
   <!-- RÉSERVATION -->
   <section class="section" id="reservation" aria-labelledby="reservation-title">
     <div class="container container--wide stack-lg">
-      <div use:reveal style="max-width:60ch">
+      <div use:reveal>
         <p class="overline">Réservation en ligne</p>
         <h2 id="reservation-title" style="margin-top:var(--space-4)">Réservez votre créneau</h2>
       </div>
@@ -54,10 +54,10 @@
   <!-- CARTE -->
   <section class="section" aria-labelledby="zone-title">
     <div class="container container--wide stack-lg">
-      <div use:reveal style="max-width:62ch">
+      <div use:reveal>
         <p class="overline">Où me trouver</p>
         <h2 id="zone-title" style="margin-top:var(--space-4)">Brie-Comte-Robert <em class="it" style="font-family:var(--font-display)">et 20 km autour</em></h2>
-        <p class="lead measure">Cabinet au 6 Passage du Roi, 77170 Brie-Comte-Robert. J'interviens aussi dans un rayon de 20 km autour. <span class="small muted">[À compléter : déplacements à domicile ? Horaires.]</span></p>
+        <p class="lead">Cabinet au 6 Passage du Roi, 77170 Brie-Comte-Robert. J'interviens aussi dans un rayon de 20 km autour. <span class="small muted">[À compléter : déplacements à domicile ? Horaires.]</span></p>
       </div>
       <MapEmbed />
     </div>

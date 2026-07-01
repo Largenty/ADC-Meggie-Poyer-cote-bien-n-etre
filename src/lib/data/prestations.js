@@ -70,6 +70,7 @@ export const blocs = [
     image: '/images/prestations/massage-bien-etre.webp',
     imageAlt: 'Séance de shiatsu et de massage bien-être',
     cta: { label: 'Réserver 30 min ou 1 h', href: site.booking },
+    learnMore: { label: 'En savoir plus', href: '/prestations/shiatsu' },
     reverse: false,
     mebp: false,
     anchor: 'shiatsu',
@@ -93,12 +94,13 @@ export const blocs = [
     eyebrow: 'Enfants à besoins particuliers',
     title: 'Technique MEBP®',
     body:
-      "La Technique MEBP® (Massage pour Enfants à Besoins Particuliers) est une approche certifiée, pensée pour le confort et l'apaisement de l'enfant.",
+      "La Technique MEBP® est spécialement conçue pour les enfants à besoins particuliers*. C'est un massage composé de pressions profondes, donné au sol sur un futon, par-dessus les vêtements. Il respecte les caractéristiques sensorielles de chaque enfant. Avec des routines visuelles et des techniques adaptées, il améliore la disponibilité et aide à gérer l'anxiété.",
     note:
-      "Je suis praticienne certifiée MEBP®. [À compléter : description officielle MEBP® et bienfaits validés, déroulé d'une séance, accompagnement des parents.]",
+      "*Sont considérés comme besoins particuliers : les besoins reliés aux conditions neurodéveloppementales ou variations neurologiques, aux déficiences physiques et intellectuelles, aux psychopathologies et aux situations qui ne sont pas encore reconnues comme la douance, sans se limiter à ces conditions ou situations (temporaires ou permanentes).",
     image: '/images/prestations/mebp.webp',
     imageAlt: "Accompagnement d'un enfant en MEBP",
     cta: { label: 'Prendre contact pour une séance MEBP®', href: '/contact' },
+    learnMore: { label: 'En savoir plus', href: '/prestations/mebp' },
     reverse: false,
     mebp: true,
     badge: true,

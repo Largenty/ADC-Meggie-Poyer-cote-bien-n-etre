@@ -16,6 +16,7 @@
     image,
     imageAlt = '',
     cta,
+    learnMore = undefined,
     reverse = false,
     mebp = false,
     badge = false,
@@ -50,6 +51,9 @@
         {#if note}<p class="small muted">{note}</p>{/if}
         <div class="btn-group">
           <Button href={cta.href} variant={mebp ? 'mebp' : 'primary'} arrow>{cta.label}</Button>
+          {#if learnMore}
+            <Button href={learnMore.href} variant="secondary">{learnMore.label}</Button>
+          {/if}
         </div>
       </div>
       <div class="care__media arch--soft">

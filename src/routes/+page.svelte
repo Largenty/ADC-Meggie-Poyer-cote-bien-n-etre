@@ -58,7 +58,7 @@
   <!-- POUR QUI -->
   <section class="section section--soft">
     <div class="container container--wide stack-lg">
-      <SectionHeading overline="Pour qui&nbsp;?" title="Un soin qui s'adapte à chacune" />
+      <SectionHeading overline="Pour qui&nbsp;?" title="Un soin qui s'adapte à chacun" lead="Hommes et femmes, femmes enceintes, enfants à besoins particuliers." />
       <div class="who-grid">
         {#each audiences as a, i}
           <FeatureCard {...a} delay={i} />

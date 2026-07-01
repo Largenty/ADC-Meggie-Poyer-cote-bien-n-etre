@@ -22,7 +22,7 @@
 
   <section class="section">
     <div class="container">
-      <div class="stack measure" use:reveal>
+      <div class="stack" use:reveal>
         <div>
           <h2>Éditrice du site</h2>
           <p>{site.name} — Meggie Poyers<br />

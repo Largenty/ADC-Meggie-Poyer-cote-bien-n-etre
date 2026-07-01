@@ -4,6 +4,8 @@
   import SectionHeading from '$lib/components/SectionHeading.svelte';
   import FeatureCard from '$lib/components/FeatureCard.svelte';
   import MebpBadge from '$lib/components/MebpBadge.svelte';
+  import MebpNotice from '$lib/components/MebpNotice.svelte';
+  import Icon from '$lib/components/Icon.svelte';
   import CtaSection from '$lib/components/CtaSection.svelte';
   import Button from '$lib/components/Button.svelte';
   import { values } from '$lib/data/values.js';
@@ -39,11 +41,19 @@
         <div class="stack" use:reveal={1}>
           <p class="overline">Bonjour</p>
           <h2>Je m'appelle Meggie</h2>
-          <p class="lead measure">Praticienne en shiatsu et massage bien-être, j'accompagne les femmes, comme les enfants à besoins particuliers, vers plus de calme et de détente, à Brie-Comte-Robert et dans un rayon de 20 km.</p>
-          <p class="measure muted">[À compléter : parcours, formation, années d'expérience, ce qui vous a menée à ce métier : quelques phrases personnelles qui créent la confiance.]</p>
+          <p class="lead measure">Spécialiste en Shiatsu, masseuse bien-être, praticienne certifiée Technique MEBP® et formée au massage femme enceinte, j'accompagne les femmes et les hommes pour des séances personnalisées à vos besoins et à vos envies.</p>
+          <p class="measure">J'ai à cœur de vous aider à soulager les douleurs du corps en vous permettant de lâcher prise. Mes expériences et mes formations me permettent d'adapter les séances en fonction de vos besoins et de ce que votre corps me dit. Vous repartez détendu(e) et allégé(e), plus serein(e).</p>
+          <p class="measure">Au-delà du massage bien-être, je travaille les différentes tensions et blocages de votre corps. Récemment certifiée de la Technique MEBP®, je reçois les enfants (à partir de 4 ans) pour des séances de massage spécialement conçues pour les enfants à besoins particuliers.</p>
+          <ul class="check-list">
+            <li><Icon name="check" size="22" /> Spécialiste en Shiatsu — Titre RNCP</li>
+            <li><Icon name="check" size="22" /> Praticienne certifiée Technique MEBP®</li>
+            <li><Icon name="check" size="22" /> Esthéticienne diplômée d'État</li>
+            <li><Icon name="check" size="22" /> Certifiée en Massage Bien Naître</li>
+          </ul>
           <p class="signature">Meggie Poyers</p>
         </div>
       </div>
+      <MebpNotice />
     </div>
   </section>
 

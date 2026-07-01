@@ -30,7 +30,7 @@
   <!-- CHAPEAU -->
   <section class="section section--tight">
     <div class="container container--wide">
-      <p class="lead measure" use:reveal>Mon approche est simple : vous réservez un temps, je compose le soin. Selon votre journée, votre corps et vos envies, je m'appuie sur le shiatsu, le massage bien-être, ou les deux. Vous n'avez rien à décider à l'avance.</p>
+      <p class="lead" use:reveal>Mon approche est simple : vous réservez un temps, je compose le soin. Selon votre journée, votre corps et vos envies, je m'appuie sur le shiatsu, le massage bien-être, ou les deux. Vous n'avez rien à décider à l'avance.</p>
     </div>
   </section>
 
