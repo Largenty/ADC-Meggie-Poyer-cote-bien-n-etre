@@ -8,7 +8,7 @@ export const audiences = [
   {
     title: 'Détente & shiatsu',
     text: 'Pour souffler, relâcher les tensions et retrouver le calme. Un vrai moment de respiration.',
-    image: '/images/prestations/massage-bien-etre.webp',
+    image: '/images/prestations/femme-enceinte.webp',
     imageAlt: "Geste lent d'un massage bien-être",
     href: '/prestations/shiatsu',
     linkLabel: 'En savoir plus',
@@ -17,7 +17,7 @@ export const audiences = [
   {
     title: 'Femme enceinte',
     text: "Un massage tout en douceur, spécifique du dos, pour soulager les tensions et s'apaiser.",
-    image: '/images/prestations/femme-enceinte.webp',
+    image: '/images/prestations/massage-bien-etre.webp',
     imageAlt: 'Soin doux pour femme enceinte',
     href: '/prestations#femme-enceinte',
     linkLabel: 'En savoir plus',
