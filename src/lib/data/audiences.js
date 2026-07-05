@@ -16,7 +16,7 @@ export const audiences = [
   },
   {
     title: 'Femme enceinte',
-    text: "Un soin tout en douceur pour soulager le dos, alléger les jambes et s'apaiser.",
+    text: "Un massage tout en douceur, spécifique du dos, pour soulager les tensions et s'apaiser.",
     image: '/images/prestations/femme-enceinte.webp',
     imageAlt: 'Soin doux pour femme enceinte',
     href: '/prestations#femme-enceinte',
@@ -24,7 +24,7 @@ export const audiences = [
     mebp: false,
   },
   {
-    title: 'Enfants — MEBP®',
+    title: 'Enfants — Technique MEBP®',
     text: 'Massage certifié pensé pour le confort et l’apaisement des enfants à besoins particuliers.',
     image: '/images/prestations/mebp.webp',
     imageAlt: "Accompagnement d'un enfant en MEBP",

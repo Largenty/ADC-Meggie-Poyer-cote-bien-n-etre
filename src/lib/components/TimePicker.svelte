@@ -3,13 +3,13 @@
   import Icon from './Icon.svelte';
   import Button from './Button.svelte';
   import { site } from '$lib/data/site.js';
-  // Sélecteur « Je réserve » : 30 min / 1 h (page d'accueil).
+  // Sélecteur « Je réserve » : 45 min / 1 h / 1 h 30 (page d'accueil).
   let { delay = 2 } = $props();
 
   const options = [
-    { value: '30 minutes', big: '30', unit: 'min', label: 'Une parenthèse' },
-    { value: '1 heure', big: '1', unit: 'h', label: 'Un vrai relâchement' },
-    { value: '1 h 30', big: '1', unit: 'h30', label: 'Un moment complet' },
+    { value: '45 minutes', big: '45', unit: 'min', label: 'Format découverte' },
+    { value: '1 heure', big: '1', unit: 'h', label: 'Durée recommandée' },
+    { value: '1 h 30', big: '1', unit: 'h30', label: 'Pour aller plus en profondeur' },
   ];
   let selected = $state('1 heure');
 </script>

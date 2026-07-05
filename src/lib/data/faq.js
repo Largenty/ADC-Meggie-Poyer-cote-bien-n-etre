@@ -8,7 +8,7 @@ export const faq = [
   {
     question: 'Comment se déroule une séance ?',
     answer:
-      "Vous réservez un format, 30 minutes ou 1 heure. En arrivant, nous échangeons quelques mots sur votre état du jour, puis je compose le soin sur place selon ce que votre corps demande : shiatsu, massage, pressions ou étirements.",
+      "Vous réservez un format, 45 minutes ou 1 heure. En arrivant, nous échangeons quelques mots sur votre état du jour, puis je compose le soin sur place selon ce que votre corps demande : shiatsu, massage, pressions ou étirements.",
   },
   {
     question: 'Quelle est la différence entre le shiatsu et le massage bien-être ?',
@@ -23,22 +23,22 @@ export const faq = [
   {
     question: "À quels enfants la Technique MEBP® s'adresse-t-elle ?",
     answer:
-      "Aux enfants à besoins particuliers : troubles du spectre autistique, TDAH, anxiété, hypersensibilité sensorielle… [À compléter : tranche d'âge accueillie et déroulé avec les parents.]",
+      "Aux enfants à besoins particuliers à partir de 4 ans : troubles du spectre autistique, TDAH, anxiété, hypersensibilité sensorielle… Le déroulé se fait avec les parents.",
   },
   {
     question: 'À partir de quand peut-on faire un massage femme enceinte ?',
     answer:
-      "Le massage femme enceinte se pratique dans des positions confortables et sécurisantes, pour soulager le dos et alléger les jambes. [À compléter : trimestre à partir duquel le soin est proposé et précautions éventuelles.]",
+      "Le massage femme enceinte se pratique entre le 4ᵉ et le 8ᵉ mois de grossesse, dans des positions confortables et sécurisantes. C'est un massage spécifique du dos ; je ne touche pas le ventre. Comptez 55 minutes.",
   },
   {
     question: 'Dois-je me déshabiller pendant la séance ?',
     answer:
-      "Pour le shiatsu et la Technique MEBP®, vous restez habillé(e) ; prévoyez une tenue souple. Pour le massage bien-être, [À compléter : précisions sur la tenue et le linge fourni.]",
+      "Pour le shiatsu et la Technique MEBP®, vous restez habillé(e) ; prévoyez une tenue souple. Pour le massage bien-être, vous êtes en sous-vêtements et toujours couvert(e) par un plaid.",
   },
   {
     question: 'Où se déroulent les séances ?',
     answer:
-      "Au cabinet, 6 Passage du Roi, 77170 Brie-Comte-Robert. J'interviens aussi dans un rayon de 20 km autour. [À compléter : déplacements à domicile éventuels.]",
+      "Au cabinet, 6 Passage du Roi, 77170 Brie-Comte-Robert.",
   },
   {
     question: 'Comment prendre rendez-vous ?',
@@ -53,12 +53,12 @@ export const faq = [
   {
     question: 'Les séances sont-elles remboursées ?',
     answer:
-      "Certaines mutuelles remboursent les séances de shiatsu. Renseignez-vous auprès de la vôtre ; je peux vous fournir un justificatif.",
+      "Certaines mutuelles remboursent les séances de shiatsu. Renseignez-vous auprès de la vôtre ; je peux vous fournir une facture.",
   },
   {
     question: 'Quels moyens de paiement acceptez-vous ?',
     answer:
-      "Le paiement s'effectue par PayPal, Paylib ou en espèces. Pour les bons cadeaux, le règlement se fait par PayPal ou Paylib.",
+      "Le paiement s'effectue par chèque, espèces, CB, virement ou Wero.",
   },
   {
     question: 'Proposez-vous des bons cadeaux ?',

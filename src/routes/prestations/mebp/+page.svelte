@@ -28,6 +28,21 @@
     'Augmente la tolérance au toucher',
     'Aide à avoir une meilleure conscience de son corps',
   ];
+
+  const deroule = [
+    {
+      num: '01',
+      title: 'Première séance, avec le ou les parents',
+      text: "Une séance avec le ou les parents, sans l'enfant, pour faire connaissance et prendre le temps de remplir les documents nécessaires à la mise en place des séances adaptées. Le parent reçoit ensuite, s'il le souhaite, le massage tel que l'enfant le recevra par la suite.",
+      duree: 'Comptez 1 h pour cette première séance.',
+    },
+    {
+      num: '02',
+      title: "Séances pour l'enfant",
+      text: "Chaque séance se déroule avec l'enfant, en présence d'un ou des parents.",
+      duree: 'Comptez 35 à 40 min.',
+    },
+  ];
 </script>
 
 <Seo
@@ -41,8 +56,8 @@
     overline="Prestation"
     title="La Technique <em>MEBP®</em>"
     lead="Un massage certifié, pensé pour le confort et l'apaisement des enfants à besoins particuliers."
-    imgSrc="/images/prestations/mebp.webp"
-    imgAlt="Accompagnement d'un enfant lors d'une séance de Technique MEBP®"
+    imgSrc="/images/prestations/mebp-seance.webp"
+    imgAlt="Séance de Technique MEBP® au sol, sur un futon et par-dessus les vêtements"
   />
 
   <!-- QU'EST-CE QUE LA MEBP -->
@@ -85,6 +100,29 @@
     </div>
   </section>
 
+  <!-- DÉROULÉ DES SÉANCES -->
+  <section class="section section--soft">
+    <div class="container container--wide">
+      <div class="stack" use:reveal>
+        <p class="overline overline--mebp">En pratique</p>
+        <h2>Déroulé des séances de Technique MEBP®</h2>
+      </div>
+      <ol class="deroule" use:reveal={1} style="margin-top:var(--space-8)">
+        {#each deroule as d}
+          <li class="deroule__step">
+            <span class="deroule__num">{d.num}</span>
+            <div class="deroule__body">
+              <h3>{d.title}</h3>
+              <p>{d.text}</p>
+              <p class="deroule__duree"><Icon name="clock" size="20" /> {d.duree}</p>
+            </div>
+          </li>
+        {/each}
+      </ol>
+      <p class="lead" use:reveal={1} style="margin-top:var(--space-8)">Je recommande <strong>6 séances</strong>, à raison d'une séance par semaine.</p>
+    </div>
+  </section>
+
   <!-- CTA -->
   <CtaSection
     overline="Une séance pour votre enfant"
@@ -93,9 +131,46 @@
     image="/images/ambiance/espace-soin.webp"
     imageAlt="Le cabinet de soin, ambiance calme et naturelle"
     actions={[
-      { label: 'Prendre contact', href: '/contact' },
+      { label: 'Prendre RDV', href: site.booking },
       { label: 'Voir les tarifs', href: '/tarifs', variant: 'secondary' },
     ]}
   />
 
 </main>
+
+<style>
+  .deroule {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: var(--space-6);
+  }
+  .deroule__step {
+    display: flex;
+    gap: var(--space-5);
+    align-items: flex-start;
+  }
+  .deroule__num {
+    flex: none;
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    line-height: 1;
+    color: var(--blue-700);
+    opacity: 0.7;
+  }
+  .deroule__body h3 {
+    margin: 0 0 var(--space-2);
+  }
+  .deroule__body p {
+    margin: 0;
+  }
+  .deroule__duree {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-top: var(--space-3) !important;
+    font-weight: 600;
+    color: var(--blue-700);
+  }
+</style>

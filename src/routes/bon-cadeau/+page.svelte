@@ -11,7 +11,7 @@
 
 <Seo
   title="Bon cadeau bien-être | Côté Bien N'être — Brie-Comte-Robert"
-  description="Offrez un bon cadeau bien-être : massage, shiatsu ou détente à Brie-Comte-Robert. Valable 6 mois. Remise en mains propres au cabinet ou envoi par e-mail. Paiement Wero, virement, CB ou chèque."
+  description="Offrez un bon cadeau bien-être : massage, shiatsu ou détente à Brie-Comte-Robert. Valable 6 mois. Remise en mains propres au cabinet ou envoi par e-mail. Paiement par Wero ou virement."
 />
 
 <main id="main">
@@ -20,8 +20,8 @@
     overline="Bon cadeau"
     title="Offrez <em>du temps</em>"
     lead="Un bon cadeau Côté Bien N'être, c'est un vrai temps pour soi : la prestation de votre choix, à offrir tout simplement."
-    imgSrc="/images/ambiance/espace-soin.webp"
-    imgAlt="Geste doux et attentionné"
+    imgSrc="/images/ambiance/bon-cadeau.webp"
+    imgAlt="Bon cadeau Côté Bien N'être, posé dans une ambiance douce et chaleureuse"
   />
 
   <!-- COMMENT ÇA MARCHE -->
@@ -60,7 +60,7 @@
             <li><span class="icon-circle" aria-hidden="true"><Icon name="pin" /></span> À venir récupérer au cabinet</li>
             <li><span class="icon-circle" aria-hidden="true"><Icon name="mail" /></span> Ou envoi par e-mail, après paiement</li>
           </ul>
-          <p class="small muted">Valable 6 mois. Paiement par Wero, virement, carte bancaire ou chèque.</p>
+          <p class="small muted">Valable 6 mois. Paiement par Wero ou virement.</p>
         </div>
       </div>
     </div>

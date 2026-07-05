@@ -14,9 +14,9 @@ import { site } from './site.js';
 //  mebp  : true pour la séance MEBP® (accent bleu de la charte).
 export const tarifs = [
   {
-    name: 'Massage bien-être — 30 min',
+    name: 'Massage bien-être — 45 min',
     tagline: 'Une parenthèse',
-    price: null, // TODO cliente : prix du format 30 min
+    price: 50,
     description:
       "Un format court pour relâcher l'essentiel : nuque, dos, épaules. Idéal quand le temps manque mais que le corps réclame une pause.",
     mebp: false,
@@ -27,6 +27,14 @@ export const tarifs = [
     price: 65,
     description:
       "Un modelage doux et enveloppant du corps entier pour dénouer les tensions en profondeur et retrouver un vrai calme intérieur.",
+    mebp: false,
+  },
+  {
+    name: 'Massage bien-être — 1 h 30',
+    tagline: 'Pour aller plus en profondeur',
+    price: 90,
+    description:
+      "Le temps de tout relâcher, sans se presser : un soin complet et profond du corps entier, pour un vrai lâcher-prise.",
     mebp: false,
   },
   {
@@ -42,13 +50,15 @@ export const tarifs = [
     tagline: 'Douceur & sécurité',
     price: 70,
     description:
-      "Un soin tout en douceur, dans des positions confortables et sécurisantes, pour soulager le dos, alléger les jambes lourdes et offrir un vrai moment de détente à la future maman.",
+      "Un soin tout en douceur, dans des positions confortables et sécurisantes, pour soulager le dos et offrir un vrai moment de détente à la future maman. Massage spécifique du dos, je ne touche pas le ventre. 55 minutes.",
     mebp: false,
   },
   {
-    name: 'Séance MEBP® — enfants',
+    name: 'Séance Technique MEBP® — enfants',
     tagline: 'Enfants à besoins particuliers',
-    price: null, // TODO cliente : prix de la séance MEBP®
+    price: 60, // 1ʳᵉ séance ; suivi 35 € (voir priceLabel/priceNote)
+    priceLabel: '60 € / 35 €',
+    priceNote: '1ʳᵉ séance / suivi',
     description:
       "Massage certifié pensé pour le confort et l'apaisement des enfants à besoins particuliers. Des gestes lents et rassurants, à leur rythme, dans un cadre calme.",
     mebp: true,
@@ -69,7 +79,7 @@ export const blocs = [
       "Pressions, étirements, gestes lents : un moment pour relâcher les tensions et retrouver de l'énergie. Vous n'avez rien à décider à l'avance, on ajuste ensemble selon ce que votre corps demande.",
     image: '/images/prestations/massage-bien-etre.webp',
     imageAlt: 'Séance de shiatsu et de massage bien-être',
-    cta: { label: 'Réserver 30 min ou 1 h', href: site.booking },
+    cta: { label: 'Réserver 45 min, 1 h ou 1 h 30', href: site.booking },
     learnMore: { label: 'En savoir plus', href: '/prestations/shiatsu' },
     reverse: false,
     mebp: false,
@@ -80,8 +90,8 @@ export const blocs = [
     eyebrow: 'Maternité',
     title: 'Massage femme enceinte',
     body:
-      "Un soin tout en douceur pour soulager le dos, alléger les jambes et s'apaiser. Des positions confortables et adaptées, dans un cadre calme et sécurisant.",
-    note: '[À compléter : précisions ou limitations selon le trimestre.]',
+      "Un soin tout en douceur pour soulager le dos et s'apaiser, dans des positions confortables et adaptées, un cadre calme et sécurisant. Massage spécifique du dos, je ne touche pas le ventre. 55 minutes.",
+    note: 'À partir du 4ᵉ mois de grossesse, jusqu’au 8ᵉ.',
     image: '/images/prestations/femme-enceinte.webp',
     imageAlt: 'Soin doux pour femme enceinte',
     cta: { label: 'Réserver', href: site.booking },
@@ -99,7 +109,7 @@ export const blocs = [
       "*Sont considérés comme besoins particuliers : les besoins reliés aux conditions neurodéveloppementales ou variations neurologiques, aux déficiences physiques et intellectuelles, aux psychopathologies et aux situations qui ne sont pas encore reconnues comme la douance, sans se limiter à ces conditions ou situations (temporaires ou permanentes).",
     image: '/images/prestations/mebp.webp',
     imageAlt: "Accompagnement d'un enfant en MEBP",
-    cta: { label: 'Prendre contact pour une séance MEBP®', href: '/contact' },
+    cta: { label: 'Prendre contact pour une séance de Technique MEBP®', href: '/contact' },
     learnMore: { label: 'En savoir plus', href: '/prestations/mebp' },
     reverse: false,
     mebp: true,

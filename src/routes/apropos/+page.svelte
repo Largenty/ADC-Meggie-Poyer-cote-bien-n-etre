@@ -66,7 +66,7 @@
           <h2 class="concept__title" style="font-size:clamp(1.875rem,1.2rem+3vw,3.25rem)">Vous réservez du temps, <em>j'adapte le soin.</em></h2>
         </div>
         <div class="stack" use:reveal={1} style="align-content:center">
-          <p class="lead">Pas besoin de choisir une technique à l'avance. Vous réservez un format, 30 minutes ou 1 heure, et je compose le soin selon ce que votre corps demande ce jour-là. Mon rôle : vous écouter, ajuster, et vous offrir une vraie parenthèse.</p>
+          <p class="lead">Pas besoin de choisir une technique à l'avance. Vous réservez un format, 45 minutes ou 1 heure, et je compose le soin selon ce que votre corps demande ce jour-là. Mon rôle : vous écouter, ajuster, et vous offrir une vraie parenthèse.</p>
           <div class="btn-group"><Button href={site.booking} variant="light" arrow>Réserver un temps</Button></div>
         </div>
       </div>

@@ -20,7 +20,7 @@
     title="Prendre <em>rendez-vous</em>"
     lead="Le plus simple : réservez directement votre créneau en ligne. Une question avant de venir ? Écrivez-moi."
     imgSrc="/images/hero/contact.webp"
-    imgAlt="Espace de soin accueillant"
+    imgAlt="Massage bien-être du dos, ambiance douce et chaleureuse"
   />
 
   <!-- RÉSERVATION -->
