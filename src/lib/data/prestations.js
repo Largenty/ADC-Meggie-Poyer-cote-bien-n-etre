@@ -77,7 +77,7 @@ export const blocs = [
     title: 'Shiatsu & massage bien-être',
     body:
       "Pressions, étirements, gestes lents : un moment pour relâcher les tensions et retrouver de l'énergie. Vous n'avez rien à décider à l'avance, on ajuste ensemble selon ce que votre corps demande.",
-    image: '/images/prestations/massage-bien-etre.webp',
+    image: '/images/prestations/femme-enceinte.webp',
     imageAlt: 'Séance de shiatsu et de massage bien-être',
     cta: { label: 'Réserver 45 min, 1 h ou 1 h 30', href: site.booking },
     learnMore: { label: 'En savoir plus', href: '/prestations/shiatsu' },
@@ -92,7 +92,7 @@ export const blocs = [
     body:
       "Un soin tout en douceur pour soulager le dos et s'apaiser, dans des positions confortables et adaptées, un cadre calme et sécurisant. Massage spécifique du dos, je ne touche pas le ventre. 55 minutes.",
     note: 'À partir du 4ᵉ mois de grossesse, jusqu’au 8ᵉ.',
-    image: '/images/prestations/femme-enceinte.webp',
+    image: '/images/prestations/massage-bien-etre.webp',
     imageAlt: 'Soin doux pour femme enceinte',
     cta: { label: 'Réserver', href: site.booking },
     reverse: true,
