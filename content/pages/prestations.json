@@ -1,0 +1,20 @@
+{
+  "seo": {
+    "title": "Prestations : shiatsu, massage, Technique MEBP® | Côté Bien N'être",
+    "description": "Shiatsu, massage bien-être, massage femme enceinte et Technique MEBP® (enfants à besoins particuliers) à Brie-Comte-Robert. Vous réservez du temps, j'adapte le soin."
+  },
+  "hero": {
+    "overline": "Ce que je vous propose",
+    "title": "Des soins qui <em>s'adaptent</em> à vous",
+    "lead": "Vous réservez un temps, je compose le soin : shiatsu, massage bien-être, ou les deux.",
+    "image": "/images/hero/prestations.webp",
+    "imageAlt": "Mains posées lors d'un soin"
+  },
+  "chapeau": "Mon approche est simple : vous réservez un temps, je compose le soin. Selon votre journée, votre corps et vos envies, je m'appuie sur le shiatsu, le massage bien-être, ou les deux. Vous n'avez rien à décider à l'avance.",
+  "doute": {
+    "overline": "Un doute&nbsp;?",
+    "title": "Pas sûre du soin qu'il <em>vous faut&nbsp;?</em>",
+    "lead": "C'est normal, et c'est tout mon rôle. Réservez un créneau, je m'occupe du reste.",
+    "ctaLabel": "Réserver un temps"
+  }
+}

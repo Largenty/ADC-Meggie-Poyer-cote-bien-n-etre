@@ -1,0 +1,67 @@
+{
+  "seo": {
+    "title": "La Technique MEBP® — enfants à besoins particuliers | Côté Bien N'être",
+    "description": "La Technique MEBP® est un massage certifié pour les enfants à besoins particuliers : pressions profondes, routine visuelle, respect des caractéristiques sensorielles. Praticienne certifiée à Brie-Comte-Robert."
+  },
+  "hero": {
+    "overline": "Prestation",
+    "title": "La Technique <em>MEBP®</em>",
+    "lead": "Un massage certifié, pensé pour le confort et l'apaisement des enfants à besoins particuliers.",
+    "image": "/images/prestations/mebp-seance.webp",
+    "imageAlt": "Séance de Technique MEBP® au sol, sur un futon et par-dessus les vêtements"
+  },
+  "quEstCe": {
+    "title": "Qu'est-ce que la Technique MEBP®&nbsp;?",
+    "lead": "La Technique MEBP® se démarque du massage « traditionnel » car elle est adaptée spécialement pour les enfants à besoins particuliers*.",
+    "caracteristiques": [
+      "Spécialement adaptée pour les enfants à besoins particuliers",
+      "Le massage est supporté d’une routine visuelle",
+      "Respecte les caractéristiques sensorielles et les besoins de chaque enfant",
+      "Se compose de pressions profondes",
+      "Se donne au sol, sur un futon et par-dessus les vêtements"
+    ],
+    "note": "*Sont considérés comme besoins particuliers : les besoins reliés aux conditions neurodéveloppementales ou variations neurologiques, aux déficiences physiques et intellectuelles, aux psychopathologies et aux situations qui ne sont pas encore reconnues comme la douance, sans se limiter à ces conditions ou situations (temporaires ou permanentes)."
+  },
+  "bienfaits": {
+    "overline": "Le système proprioceptif stimulé",
+    "title": "Plusieurs bienfaits",
+    "lead": "Le massage stimule le système proprioceptif, ce qui amène plusieurs bienfaits&nbsp;:",
+    "items": [
+      "Aide à la concentration et améliore la disponibilité",
+      "Aide à gérer l’anxiété et la colère",
+      "Améliore la digestion et réduit la constipation",
+      "Diminue le niveau de stress",
+      "Aide à diminuer la fréquence et l’intensité des tics nerveux",
+      "Améliore la qualité du sommeil",
+      "Réduit la fréquence et l’intensité des migraines et des maux de tête",
+      "Augmente la tolérance au toucher",
+      "Aide à avoir une meilleure conscience de son corps"
+    ]
+  },
+  "deroule": {
+    "overline": "En pratique",
+    "title": "Déroulé des séances de Technique MEBP®",
+    "steps": [
+      {
+        "num": "01",
+        "title": "Première séance, avec le ou les parents",
+        "text": "Une séance avec le ou les parents, sans l'enfant, pour faire connaissance et prendre le temps de remplir les documents nécessaires à la mise en place des séances adaptées. Le parent reçoit ensuite, s'il le souhaite, le massage tel que l'enfant le recevra par la suite.",
+        "duree": "Comptez 1 h pour cette première séance."
+      },
+      {
+        "num": "02",
+        "title": "Séances pour l'enfant",
+        "text": "Chaque séance se déroule avec l'enfant, en présence d'un ou des parents.",
+        "duree": "Comptez 35 à 40 min."
+      }
+    ],
+    "footer": "Je recommande <strong>6 séances</strong>, à raison d'une séance par semaine."
+  },
+  "cta": {
+    "overline": "Une séance pour votre enfant",
+    "title": "Envie d'en <em>parler&nbsp;?</em>",
+    "lead": "Contactez-moi pour une première question ou pour organiser une séance adaptée à votre enfant.",
+    "image": "/images/ambiance/espace-soin.webp",
+    "imageAlt": "Le cabinet de soin, ambiance calme et naturelle"
+  }
+}

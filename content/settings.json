@@ -1,0 +1,16 @@
+{
+  "name": "Côté Bien N'être",
+  "baseline": "Shiatsu, massage bien-être, femme enceinte et Technique MEBP®. Vous réservez du temps, j'adapte le soin.",
+  "phone": { "display": "07 81 13 03 30", "tel": "+33781130330" },
+  "email": "cotebiennetre@gmail.com",
+  "address": { "street": "6 Passage du Roi", "city": "77170 Brie-Comte-Robert" },
+  "zone": "Brie-Comte-Robert et 20 km autour",
+  "booking": "https://www.resalib.fr/praticien/27195-cote-bien-n-etre-meggie-poyers-praticien-shiatsu-brie-comte-robert",
+  "url": "https://adc-meggie-poyer-cote-bien-n-etre.vercel.app",
+  "geo": { "lat": 48.6925, "lng": 2.6097 },
+  "rating": { "value": 5, "count": 31 },
+  "priceRange": "€€",
+  "profiles": [
+    "https://www.resalib.fr/praticien/27195-cote-bien-n-etre-meggie-poyers-praticien-shiatsu-brie-comte-robert"
+  ]
+}

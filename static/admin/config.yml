@@ -1,0 +1,700 @@
+## ============================================================
+##  Sveltia CMS — configuration de l'interface d'édition
+##  Interface disponible sur /admin (connexion GitHub).
+##  Chaque modification = un commit GitHub → redéploiement Vercel auto.
+## ============================================================
+
+backend:
+  name: github
+  repo: Largenty/ADC-Meggie-Poyer-cote-bien-n-etre
+  branch: main
+  # Échange OAuth GitHub servi par le site lui-même (voir /api/auth).
+  base_url: https://adc-meggie-poyer-cote-bien-n-etre.vercel.app
+  auth_endpoint: api/auth
+
+# Permet de tester l'interface en local (npx @sveltia/cms-proxy-server)
+# sans passer par GitHub.
+local_backend: true
+
+# Les images uploadées vont dans static/images et sont servies sous /images.
+media_folder: "static/images"
+public_folder: "/images"
+
+# Langue de l'interface
+locale: fr
+
+# Message de commit lisible dans l'historique GitHub
+site_url: https://adc-meggie-poyer-cote-bien-n-etre.vercel.app
+display_url: https://adc-meggie-poyer-cote-bien-n-etre.vercel.app
+
+collections:
+  # ---------------------------------------------------------
+  #  RÉGLAGES GÉNÉRAUX
+  # ---------------------------------------------------------
+  - name: reglages
+    label: "Réglages du site"
+    delete: false
+    editor:
+      preview: false
+    files:
+      - name: settings
+        label: "Coordonnées & réglages"
+        file: "content/settings.json"
+        fields:
+          - { name: name, label: "Nom du cabinet", widget: string }
+          - { name: baseline, label: "Phrase d'accroche", widget: text }
+          - name: phone
+            label: "Téléphone"
+            widget: object
+            fields:
+              - { name: display, label: "Affiché à l'écran", widget: string }
+              - { name: tel, label: "Format lien (ex. +33781130330)", widget: string }
+          - { name: email, label: "E-mail", widget: string }
+          - name: address
+            label: "Adresse du cabinet"
+            widget: object
+            fields:
+              - { name: street, label: "Rue", widget: string }
+              - { name: city, label: "Code postal + ville", widget: string }
+          - { name: zone, label: "Zone d'intervention", widget: string }
+          - { name: booking, label: "Lien de réservation Resalib", widget: string }
+          - name: rating
+            label: "Note d'avis"
+            widget: object
+            fields:
+              - { name: value, label: "Note (sur 5)", widget: number, value_type: float, step: 0.1 }
+              - { name: count, label: "Nombre d'avis", widget: number, value_type: int }
+          ## --- Champs techniques (SEO) : à ne pas modifier sans Lulu ---
+          - { name: url, label: "URL du site (technique)", widget: string, hint: "Ne modifier qu'au moment du branchement du domaine." }
+          - { name: priceRange, label: "Fourchette de prix (technique)", widget: string, required: false }
+          - name: geo
+            label: "Coordonnées GPS (technique)"
+            widget: object
+            collapsed: true
+            fields:
+              - { name: lat, label: "Latitude", widget: number, value_type: float, step: 0.0001 }
+              - { name: lng, label: "Longitude", widget: number, value_type: float, step: 0.0001 }
+          - name: profiles
+            label: "Profils externes (technique)"
+            widget: list
+            required: false
+            field: { name: url, label: "URL", widget: string }
+
+  # ---------------------------------------------------------
+  #  PRESTATIONS & TARIFS
+  # ---------------------------------------------------------
+  - name: prestations
+    label: "Prestations & tarifs"
+    delete: false
+    files:
+      - name: prestations
+        label: "Prestations & tarifs"
+        file: "content/prestations.json"
+        fields:
+          - name: tarifs
+            label: "Grille tarifaire (page Tarifs)"
+            label_singular: "Tarif"
+            widget: list
+            summary: "{{fields.name}} — {{fields.price}} €"
+            fields:
+              - { name: name, label: "Nom", widget: string }
+              - { name: tagline, label: "Sous-titre", widget: string }
+              - { name: price, label: "Prix (€)", widget: number, value_type: int }
+              - { name: priceLabel, label: "Prix affiché (si spécial, ex. 60 € / 35 €)", widget: string, required: false }
+              - { name: priceNote, label: "Mention sous le prix (ex. 1ʳᵉ séance / suivi)", widget: string, required: false }
+              - { name: description, label: "Description", widget: text }
+              - { name: mebp, label: "Séance Technique MEBP® (accent bleu)", widget: boolean, default: false }
+          - name: blocs
+            label: "Grands blocs (page Prestations)"
+            label_singular: "Bloc"
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { name: index, label: "Numéro (ex. 01)", widget: string }
+              - { name: eyebrow, label: "Petit titre au-dessus", widget: string }
+              - { name: title, label: "Titre", widget: string }
+              - { name: body, label: "Texte", widget: text }
+              - { name: note, label: "Note / précisions", widget: text, required: false }
+              - { name: image, label: "Image", widget: image, required: false }
+              - { name: imageAlt, label: "Description de l'image (accessibilité)", widget: string, required: false }
+              - name: cta
+                label: "Bouton principal"
+                widget: object
+                fields:
+                  - { name: label, label: "Texte du bouton", widget: string }
+                  - { name: href, label: "Lien", widget: string }
+              - name: learnMore
+                label: "Lien « En savoir plus »"
+                widget: object
+                required: false
+                fields:
+                  - { name: label, label: "Texte", widget: string }
+                  - { name: href, label: "Lien", widget: string }
+              - { name: reverse, label: "Inverser texte / image", widget: boolean, default: false }
+              - { name: mebp, label: "Bloc Technique MEBP® (zone bleue)", widget: boolean, default: false }
+              - { name: badge, label: "Afficher le badge « Praticienne certifiée MEBP® »", widget: boolean, required: false, default: false }
+              - { name: anchor, label: "Ancre HTML (technique)", widget: string }
+
+  # ---------------------------------------------------------
+  #  CARTES « POUR QUI ? » (accueil)
+  # ---------------------------------------------------------
+  - name: audiences
+    label: "Cartes « Pour qui ? » (accueil)"
+    delete: false
+    files:
+      - name: audiences
+        label: "Cartes « Pour qui ? »"
+        file: "content/audiences.json"
+        fields:
+          - name: items
+            label: "Cartes"
+            label_singular: "Carte"
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { name: title, label: "Titre", widget: string }
+              - { name: text, label: "Texte", widget: text }
+              - { name: image, label: "Image", widget: image, required: false }
+              - { name: imageAlt, label: "Description de l'image (accessibilité)", widget: string, required: false }
+              - { name: href, label: "Lien « En savoir plus »", widget: string, required: false }
+              - { name: linkLabel, label: "Texte du lien", widget: string, required: false }
+              - { name: mebp, label: "Carte Technique MEBP® (accent bleu)", widget: boolean, default: false }
+
+  # ---------------------------------------------------------
+  #  FAQ
+  # ---------------------------------------------------------
+  - name: faq
+    label: "Foire aux questions"
+    delete: false
+    files:
+      - name: faq
+        label: "Questions / réponses"
+        file: "content/faq.json"
+        fields:
+          - name: items
+            label: "Questions"
+            label_singular: "Question"
+            widget: list
+            summary: "{{fields.question}}"
+            fields:
+              - { name: question, label: "Question", widget: string }
+              - { name: answer, label: "Réponse", widget: text }
+
+  # ---------------------------------------------------------
+  #  AVIS CLIENTS
+  # ---------------------------------------------------------
+  - name: avis
+    label: "Avis clients"
+    delete: false
+    files:
+      - name: reviews
+        label: "Avis (carrousel accueil)"
+        file: "content/reviews.json"
+        fields:
+          - name: items
+            label: "Avis"
+            label_singular: "Avis"
+            widget: list
+            summary: "{{fields.author}} — {{fields.context}}"
+            fields:
+              - { name: quote, label: "Avis (entourer un mot de <em>…</em> pour l'accentuer)", widget: string }
+              - { name: author, label: "Auteur", widget: string }
+              - { name: context, label: "Date / contexte", widget: string }
+
+  # ---------------------------------------------------------
+  #  « CE QUI ME GUIDE » (À propos)
+  # ---------------------------------------------------------
+  - name: valeurs
+    label: "Valeurs (À propos)"
+    delete: false
+    files:
+      - name: values
+        label: "Ce qui me guide"
+        file: "content/values.json"
+        fields:
+          - name: items
+            label: "Valeurs"
+            label_singular: "Valeur"
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - name: icon
+                label: "Icône"
+                widget: select
+                options: [listen, adapt, heart, clock, check, pin, phone, mail]
+              - { name: title, label: "Titre", widget: string }
+              - { name: text, label: "Texte", widget: text }
+
+  # ---------------------------------------------------------
+  #  ÉTAPES « COMMENT ÇA SE PASSE »
+  # ---------------------------------------------------------
+  - name: etapes
+    label: "Étapes « Comment ça se passe »"
+    delete: false
+    files:
+      - name: steps
+        label: "Étapes"
+        file: "content/steps.json"
+        fields:
+          - name: home
+            label: "Étapes — page d'accueil"
+            label_singular: "Étape"
+            widget: list
+            summary: "{{fields.num}} — {{fields.title}}"
+            fields:
+              - { name: num, label: "Numéro (ex. 01)", widget: string }
+              - { name: title, label: "Titre", widget: string }
+              - { name: text, label: "Texte", widget: text }
+          - name: gift
+            label: "Étapes — page Bon cadeau"
+            label_singular: "Étape"
+            widget: list
+            summary: "{{fields.num}} — {{fields.title}}"
+            fields:
+              - { name: num, label: "Numéro (ex. 01)", widget: string }
+              - { name: title, label: "Titre", widget: string }
+              - { name: text, label: "Texte", widget: text }
+
+  # ---------------------------------------------------------
+  #  PAGES — textes de chaque page
+  #  (HTML simple autorisé dans les titres : <em>mot</em>, <br />)
+  # ---------------------------------------------------------
+  - name: pages
+    label: "Pages (textes)"
+    delete: false
+    files:
+      # ===== ACCUEIL =====
+      - name: accueil
+        label: "Accueil"
+        file: "content/pages/accueil.json"
+        fields:
+          - name: seo
+            label: "SEO (Google)"
+            widget: object
+            collapsed: true
+            fields:
+              - { name: title, label: "Titre SEO", widget: string }
+              - { name: description, label: "Description SEO", widget: text }
+          - name: hero
+            label: "En-tête"
+            widget: object
+            fields:
+              - { name: overline, label: "Sur-titre", widget: string }
+              - { name: title, label: "Titre", widget: string }
+              - { name: sub, label: "Sous-titre", widget: string }
+              - { name: imageAlt, label: "Description de l'image de fond", widget: string }
+          - name: concept
+            label: "Section « Une approche »"
+            widget: object
+            fields:
+              - { name: overline, label: "Sur-titre", widget: string }
+              - { name: title, label: "Titre (HTML autorisé)", widget: string }
+              - { name: lead, label: "Texte", widget: text }
+          - name: pourQui
+            label: "Section « Pour qui ? »"
+            widget: object
+            fields:
+              - { name: overline, label: "Sur-titre", widget: string }
+              - { name: title, label: "Titre", widget: string }
+              - { name: lead, label: "Texte", widget: text }
+          - name: enPratique
+            label: "Section « En pratique »"
+            widget: object
+            fields:
+              - { name: overline, label: "Sur-titre", widget: string }
+              - { name: title, label: "Titre", widget: string }
+              - { name: lead, label: "Texte", widget: text }
+              - { name: ctaLabel, label: "Texte du bouton", widget: string }
+          - name: cta
+            label: "Appel final"
+            widget: object
+            fields:
+              - { name: overline, label: "Sur-titre", widget: string }
+              - { name: title, label: "Titre (HTML autorisé)", widget: string }
+              - { name: lead, label: "Texte", widget: text }
+              - { name: image, label: "Image", widget: image, required: false }
+              - { name: imageAlt, label: "Description de l'image", widget: string, required: false }
+      # ===== À PROPOS =====
+      - name: apropos
+        label: "À propos"
+        file: "content/pages/apropos.json"
+        fields:
+          - name: seo
+            label: "SEO (Google)"
+            widget: object
+            collapsed: true
+            fields:
+              - { name: title, label: "Titre SEO", widget: string }
+              - { name: description, label: "Description SEO", widget: text }
+          - name: hero
+            label: "En-tête"
+            widget: object
+            fields:
+              - { name: overline, label: "Sur-titre", widget: string }
+              - { name: title, label: "Titre (HTML autorisé)", widget: string }
+              - { name: lead, label: "Texte", widget: text }
+              - { name: image, label: "Image", widget: image, required: false }
+              - { name: imageAlt, label: "Description de l'image", widget: string, required: false }
+          - name: intro
+            label: "Section « Je m'appelle Meggie »"
+            widget: object
+            fields:
+              - { name: overline, label: "Sur-titre", widget: string }
+              - { name: title, label: "Titre", widget: string }
+              - { name: lead, label: "Introduction", widget: text }
+              - name: paragraphs
+                label: "Paragraphes"
+                widget: list
+                field: { name: text, label: "Paragraphe", widget: text }
+              - name: credentials
+                label: "Diplômes / certifications"
+                widget: list
+                field: { name: item, label: "Ligne", widget: string }
+              - { name: signature, label: "Signature", widget: string }
+          - name: approche
+            label: "Section « Mon approche »"
+            widget: object
+            fields:
+              - { name: overline, label: "Sur-titre", widget: string }
+              - { name: title, label: "Titre (HTML autorisé)", widget: string }
+              - { name: lead, label: "Texte", widget: text }
+              - { name: ctaLabel, label: "Texte du bouton", widget: string }
+          - name: valeurs
+            label: "Titre section « Ce qui me guide »"
+            widget: object
+            fields:
+              - { name: overline, label: "Sur-titre", widget: string }
+              - { name: title, label: "Titre", widget: string }
+          - name: cta
+            label: "Appel final"
+            widget: object
+            fields:
+              - { name: overline, label: "Sur-titre", widget: string }
+              - { name: title, label: "Titre (HTML autorisé)", widget: string }
+              - { name: lead, label: "Texte", widget: text }
+              - { name: image, label: "Image", widget: image, required: false }
+              - { name: imageAlt, label: "Description de l'image", widget: string, required: false }
+      # ===== PRESTATIONS =====
+      - name: prestations
+        label: "Prestations (page)"
+        file: "content/pages/prestations.json"
+        fields:
+          - name: seo
+            label: "SEO (Google)"
+            widget: object
+            collapsed: true
+            fields:
+              - { name: title, label: "Titre SEO", widget: string }
+              - { name: description, label: "Description SEO", widget: text }
+          - name: hero
+            label: "En-tête"
+            widget: object
+            fields:
+              - { name: overline, label: "Sur-titre", widget: string }
+              - { name: title, label: "Titre (HTML autorisé)", widget: string }
+              - { name: lead, label: "Texte", widget: text }
+              - { name: image, label: "Image", widget: image, required: false }
+              - { name: imageAlt, label: "Description de l'image", widget: string, required: false }
+          - { name: chapeau, label: "Chapeau (paragraphe d'intro)", widget: text }
+          - name: doute
+            label: "Section « Un doute ? »"
+            widget: object
+            fields:
+              - { name: overline, label: "Sur-titre (HTML autorisé)", widget: string }
+              - { name: title, label: "Titre (HTML autorisé)", widget: string }
+              - { name: lead, label: "Texte", widget: text }
+              - { name: ctaLabel, label: "Texte du bouton", widget: string }
+      # ===== TARIFS =====
+      - name: tarifs
+        label: "Tarifs (page)"
+        file: "content/pages/tarifs.json"
+        fields:
+          - name: seo
+            label: "SEO (Google)"
+            widget: object
+            collapsed: true
+            fields:
+              - { name: title, label: "Titre SEO", widget: string }
+              - { name: description, label: "Description SEO", widget: text }
+          - name: hero
+            label: "En-tête"
+            widget: object
+            fields:
+              - { name: overline, label: "Sur-titre", widget: string }
+              - { name: title, label: "Titre (HTML autorisé)", widget: string }
+              - { name: lead, label: "Texte", widget: text }
+              - { name: image, label: "Image", widget: image, required: false }
+              - { name: imageAlt, label: "Description de l'image", widget: string, required: false }
+          - name: intro
+            label: "Section « En clair »"
+            widget: object
+            fields:
+              - { name: overline, label: "Sur-titre", widget: string }
+              - { name: title, label: "Titre (HTML autorisé)", widget: string }
+              - { name: lead, label: "Texte", widget: text }
+              - { name: ctaLabel, label: "Texte du bouton", widget: string }
+          - { name: priceNote, label: "Note sous la grille (HTML autorisé)", widget: text }
+          - name: cta
+            label: "Encart bon cadeau"
+            widget: object
+            fields:
+              - { name: overline, label: "Sur-titre", widget: string }
+              - { name: title, label: "Titre (HTML autorisé)", widget: string }
+              - { name: lead, label: "Texte", widget: text }
+              - { name: image, label: "Image", widget: image, required: false }
+              - { name: imageAlt, label: "Description de l'image", widget: string, required: false }
+      # ===== BON CADEAU =====
+      - name: bon-cadeau
+        label: "Bon cadeau (page)"
+        file: "content/pages/bon-cadeau.json"
+        fields:
+          - name: seo
+            label: "SEO (Google)"
+            widget: object
+            collapsed: true
+            fields:
+              - { name: title, label: "Titre SEO", widget: string }
+              - { name: description, label: "Description SEO", widget: text }
+          - name: hero
+            label: "En-tête"
+            widget: object
+            fields:
+              - { name: overline, label: "Sur-titre", widget: string }
+              - { name: title, label: "Titre (HTML autorisé)", widget: string }
+              - { name: lead, label: "Texte", widget: text }
+              - { name: image, label: "Image", widget: image, required: false }
+              - { name: imageAlt, label: "Description de l'image", widget: string, required: false }
+          - name: commentCaMarche
+            label: "Section « Comment ça marche »"
+            widget: object
+            fields:
+              - { name: overline, label: "Sur-titre", widget: string }
+              - { name: title, label: "Titre (HTML autorisé)", widget: string }
+              - { name: lead, label: "Texte", widget: text }
+              - { name: ctaLabel, label: "Texte du bouton", widget: string }
+          - name: aPreciser
+            label: "Section « Ce dont j'ai besoin »"
+            widget: object
+            fields:
+              - { name: overline, label: "Sur-titre", widget: string }
+              - { name: title, label: "Titre", widget: string }
+              - name: items
+                label: "Liste"
+                widget: list
+                field: { name: item, label: "Ligne", widget: string }
+          - name: remise
+            label: "Section « Remise & paiement »"
+            widget: object
+            fields:
+              - { name: overline, label: "Sur-titre", widget: string }
+              - { name: title, label: "Titre", widget: string }
+              - { name: pickup, label: "Ligne « récupérer au cabinet »", widget: string }
+              - { name: email, label: "Ligne « envoi par e-mail »", widget: string }
+              - { name: note, label: "Note (validité, paiement)", widget: string }
+          - name: cta
+            label: "Appel final"
+            widget: object
+            fields:
+              - { name: overline, label: "Sur-titre", widget: string }
+              - { name: title, label: "Titre (HTML autorisé)", widget: string }
+              - { name: lead, label: "Texte", widget: text }
+              - { name: image, label: "Image", widget: image, required: false }
+              - { name: imageAlt, label: "Description de l'image", widget: string, required: false }
+      # ===== CONTACT =====
+      - name: contact
+        label: "Contact (page)"
+        file: "content/pages/contact.json"
+        fields:
+          - name: seo
+            label: "SEO (Google)"
+            widget: object
+            collapsed: true
+            fields:
+              - { name: title, label: "Titre SEO", widget: string }
+              - { name: description, label: "Description SEO", widget: text }
+          - name: hero
+            label: "En-tête"
+            widget: object
+            fields:
+              - { name: overline, label: "Sur-titre", widget: string }
+              - { name: title, label: "Titre (HTML autorisé)", widget: string }
+              - { name: lead, label: "Texte", widget: text }
+              - { name: image, label: "Image", widget: image, required: false }
+              - { name: imageAlt, label: "Description de l'image", widget: string, required: false }
+          - name: reservation
+            label: "Section « Réservation en ligne »"
+            widget: object
+            fields:
+              - { name: overline, label: "Sur-titre", widget: string }
+              - { name: title, label: "Titre", widget: string }
+          - name: contact
+            label: "Section « Me contacter »"
+            widget: object
+            fields:
+              - { name: overline, label: "Sur-titre", widget: string }
+              - { name: title, label: "Titre (HTML autorisé)", widget: string }
+              - { name: lead, label: "Texte", widget: text }
+          - name: zone
+            label: "Section « Où me trouver »"
+            widget: object
+            fields:
+              - { name: overline, label: "Sur-titre", widget: string }
+              - { name: title, label: "Titre (HTML autorisé)", widget: string }
+              - { name: lead, label: "Texte", widget: text }
+      # ===== FAQ (page) =====
+      - name: faq
+        label: "FAQ (page)"
+        file: "content/pages/faq.json"
+        fields:
+          - name: seo
+            label: "SEO (Google)"
+            widget: object
+            collapsed: true
+            fields:
+              - { name: title, label: "Titre SEO", widget: string }
+              - { name: description, label: "Description SEO", widget: text }
+          - name: hero
+            label: "En-tête"
+            widget: object
+            fields:
+              - { name: overline, label: "Sur-titre", widget: string }
+              - { name: title, label: "Titre (HTML autorisé)", widget: string }
+              - { name: lead, label: "Texte", widget: text }
+              - { name: image, label: "Image", widget: image, required: false }
+              - { name: imageAlt, label: "Description de l'image", widget: string, required: false }
+          - name: cta
+            label: "Appel final"
+            widget: object
+            fields:
+              - { name: overline, label: "Sur-titre (HTML autorisé)", widget: string }
+              - { name: title, label: "Titre (HTML autorisé)", widget: string }
+              - { name: lead, label: "Texte", widget: text }
+              - { name: image, label: "Image", widget: image, required: false }
+              - { name: imageAlt, label: "Description de l'image", widget: string, required: false }
+      # ===== TECHNIQUE MEBP (page détail) =====
+      - name: mebp
+        label: "Technique MEBP® (page)"
+        file: "content/pages/mebp.json"
+        fields:
+          - name: seo
+            label: "SEO (Google)"
+            widget: object
+            collapsed: true
+            fields:
+              - { name: title, label: "Titre SEO", widget: string }
+              - { name: description, label: "Description SEO", widget: text }
+          - name: hero
+            label: "En-tête"
+            widget: object
+            fields:
+              - { name: overline, label: "Sur-titre", widget: string }
+              - { name: title, label: "Titre (HTML autorisé)", widget: string }
+              - { name: lead, label: "Texte", widget: text }
+              - { name: image, label: "Image", widget: image, required: false }
+              - { name: imageAlt, label: "Description de l'image", widget: string, required: false }
+          - name: quEstCe
+            label: "Section « Qu'est-ce que la MEBP® »"
+            widget: object
+            fields:
+              - { name: title, label: "Titre (HTML autorisé)", widget: string }
+              - { name: lead, label: "Texte", widget: text }
+              - name: caracteristiques
+                label: "Caractéristiques"
+                widget: list
+                field: { name: item, label: "Ligne", widget: string }
+              - { name: note, label: "Note (astérisque)", widget: text }
+          - name: bienfaits
+            label: "Section « Plusieurs bienfaits »"
+            widget: object
+            fields:
+              - { name: overline, label: "Sur-titre", widget: string }
+              - { name: title, label: "Titre", widget: string }
+              - { name: lead, label: "Texte (HTML autorisé)", widget: string }
+              - name: items
+                label: "Bienfaits"
+                widget: list
+                field: { name: item, label: "Ligne", widget: string }
+          - name: deroule
+            label: "Section « Déroulé des séances »"
+            widget: object
+            fields:
+              - { name: overline, label: "Sur-titre", widget: string }
+              - { name: title, label: "Titre", widget: string }
+              - name: steps
+                label: "Étapes"
+                widget: list
+                summary: "{{fields.num}} — {{fields.title}}"
+                fields:
+                  - { name: num, label: "Numéro", widget: string }
+                  - { name: title, label: "Titre", widget: string }
+                  - { name: text, label: "Texte", widget: text }
+                  - { name: duree, label: "Durée", widget: string }
+              - { name: footer, label: "Phrase de fin (HTML autorisé)", widget: string }
+          - name: cta
+            label: "Appel final"
+            widget: object
+            fields:
+              - { name: overline, label: "Sur-titre", widget: string }
+              - { name: title, label: "Titre (HTML autorisé)", widget: string }
+              - { name: lead, label: "Texte", widget: text }
+              - { name: image, label: "Image", widget: image, required: false }
+              - { name: imageAlt, label: "Description de l'image", widget: string, required: false }
+      # ===== SHIATSU (page détail) =====
+      - name: shiatsu
+        label: "Shiatsu (page)"
+        file: "content/pages/shiatsu.json"
+        fields:
+          - name: seo
+            label: "SEO (Google)"
+            widget: object
+            collapsed: true
+            fields:
+              - { name: title, label: "Titre SEO", widget: string }
+              - { name: description, label: "Description SEO", widget: text }
+          - name: hero
+            label: "En-tête"
+            widget: object
+            fields:
+              - { name: overline, label: "Sur-titre", widget: string }
+              - { name: title, label: "Titre (HTML autorisé)", widget: string }
+              - { name: lead, label: "Texte", widget: text }
+              - { name: image, label: "Image", widget: image, required: false }
+              - { name: imageAlt, label: "Description de l'image", widget: string, required: false }
+          - name: quEstCe
+            label: "Section « Qu'est-ce que le Shiatsu »"
+            widget: object
+            fields:
+              - { name: overline, label: "Sur-titre", widget: string }
+              - { name: title, label: "Titre (HTML autorisé)", widget: string }
+              - { name: lead, label: "Texte", widget: text }
+              - { name: mauxOverline, label: "Sur-titre de la liste", widget: string }
+              - name: maux
+                label: "Le Shiatsu aide à soulager"
+                widget: list
+                field: { name: item, label: "Ligne", widget: string }
+          - name: deroule
+            label: "Section « Le déroulé »"
+            widget: object
+            fields:
+              - { name: overline, label: "Sur-titre", widget: string }
+              - { name: title, label: "Titre", widget: string }
+              - { name: lead, label: "Texte (HTML autorisé)", widget: text }
+              - { name: text2, label: "Second paragraphe", widget: text }
+              - { name: ctaLabel, label: "Texte du bouton", widget: string }
+          - name: massage
+            label: "Section « Le massage bien-être »"
+            widget: object
+            fields:
+              - { name: overline, label: "Sur-titre", widget: string }
+              - { name: title, label: "Titre", widget: string }
+              - { name: lead, label: "Texte", widget: text }
+              - { name: text2, label: "Second paragraphe", widget: text }
+          - name: cta
+            label: "Appel final"
+            widget: object
+            fields:
+              - { name: overline, label: "Sur-titre", widget: string }
+              - { name: title, label: "Titre (HTML autorisé)", widget: string }
+              - { name: lead, label: "Texte", widget: text }
+              - { name: image, label: "Image", widget: image, required: false }
+              - { name: imageAlt, label: "Description de l'image", widget: string, required: false }

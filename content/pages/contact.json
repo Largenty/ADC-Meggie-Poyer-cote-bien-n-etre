@@ -1,0 +1,27 @@
+{
+  "seo": {
+    "title": "Contact & réservation | Côté Bien N'être — Brie-Comte-Robert",
+    "description": "Réservez votre séance de shiatsu ou massage à Brie-Comte-Robert (6 Passage du Roi, 77170). Réservation en ligne Resalib, formulaire de contact, téléphone."
+  },
+  "hero": {
+    "overline": "Prenons rendez-vous",
+    "title": "Prendre <em>rendez-vous</em>",
+    "lead": "Le plus simple : réservez directement votre créneau en ligne. Une question avant de venir ? Écrivez-moi.",
+    "image": "/images/hero/contact.webp",
+    "imageAlt": "Massage bien-être du dos, ambiance douce et chaleureuse"
+  },
+  "reservation": {
+    "overline": "Réservation en ligne",
+    "title": "Réservez votre créneau"
+  },
+  "contact": {
+    "overline": "Me contacter",
+    "title": "Une question<br />avant de venir&nbsp;?",
+    "lead": "Écrivez-moi, je vous réponds au plus vite. Vous pouvez aussi m'appeler directement."
+  },
+  "zone": {
+    "overline": "Où me trouver",
+    "title": "Au cabinet, à <em class=\"it\" style=\"font-family:var(--font-display)\">Brie-Comte-Robert</em>",
+    "lead": "Cabinet au 6 Passage du Roi, 77170 Brie-Comte-Robert."
+  }
+}

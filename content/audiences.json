@@ -1,0 +1,31 @@
+{
+  "items": [
+    {
+      "title": "Détente & shiatsu",
+      "text": "Pour souffler, relâcher les tensions et retrouver le calme. Un vrai moment de respiration.",
+      "image": "/images/prestations/femme-enceinte.webp",
+      "imageAlt": "Geste lent d'un massage bien-être",
+      "href": "/prestations/shiatsu",
+      "linkLabel": "En savoir plus",
+      "mebp": false
+    },
+    {
+      "title": "Femme enceinte",
+      "text": "Un massage tout en douceur, spécifique du dos, pour soulager les tensions et s'apaiser.",
+      "image": "/images/prestations/massage-bien-etre.webp",
+      "imageAlt": "Soin doux pour femme enceinte",
+      "href": "/prestations#femme-enceinte",
+      "linkLabel": "En savoir plus",
+      "mebp": false
+    },
+    {
+      "title": "Enfants — Technique MEBP®",
+      "text": "Massage certifié pensé pour le confort et l’apaisement des enfants à besoins particuliers.",
+      "image": "/images/prestations/mebp-accueil.webp",
+      "imageAlt": "Séance de Technique MEBP® au sol, par-dessus les vêtements",
+      "href": "/prestations/mebp",
+      "linkLabel": "En savoir plus",
+      "mebp": true
+    }
+  ]
+}

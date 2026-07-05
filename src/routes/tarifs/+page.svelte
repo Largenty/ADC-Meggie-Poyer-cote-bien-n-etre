@@ -7,21 +7,20 @@
   import { tarifs } from '$lib/data/prestations.js';
   import { site } from '$lib/data/site.js';
   import Seo from '$lib/components/Seo.svelte';
+  // Textes éditables depuis /admin → content/pages/tarifs.json
+  import page from '../../../content/pages/tarifs.json';
 </script>
 
-<Seo
-  title="Tarifs des séances | Côté Bien N'être — Brie-Comte-Robert"
-  description="Tarifs : massage bien-être (45 min 50 €, 1 h 65 €, 1 h 30 90 €), shiatsu 70 €, massage femme enceinte 70 €, Technique MEBP® (1ʳᵉ séance 60 € / suivi 35 €). Bons cadeaux et forfaits. Brie-Comte-Robert (77)."
-/>
+<Seo title={page.seo.title} description={page.seo.description} />
 
 <main id="main">
 
   <PageHero
-    overline="Tarifs"
-    title="Vous réservez <em>un temps</em>"
-    lead="45 minutes ou 1 heure de massage bien-être, et j'adapte le soin sur place. Avec aussi des séances dédiées : Shiatsu, femme enceinte et Technique MEBP®."
-    imgSrc="/images/hero/apropos-tarifs.webp"
-    imgAlt="Ambiance calme d'un espace de soin"
+    overline={page.hero.overline}
+    title={page.hero.title}
+    lead={page.hero.lead}
+    imgSrc={page.hero.image}
+    imgAlt={page.hero.imageAlt}
   />
 
   <!-- LISTE DE TARIFS -->
@@ -29,15 +28,15 @@
     <div class="container container--wide">
       <div class="concept" style="align-items:start">
         <div class="stack sticky-aside" use:reveal>
-          <p class="overline">En clair</p>
-          <h2>Du temps,<br />pas un menu</h2>
-          <p class="lead measure-sm">Pour le massage bien-être, choisissez surtout un format. Sur place, j'ajuste mes gestes à ce que votre corps demande ce jour-là : shiatsu, pressions, étirements.</p>
-          <div class="btn-group"><Button href={site.booking} arrow>Réserver un créneau</Button></div>
+          <p class="overline">{page.intro.overline}</p>
+          <h2>{@html page.intro.title}</h2>
+          <p class="lead measure-sm">{page.intro.lead}</p>
+          <div class="btn-group"><Button href={site.booking} arrow>{page.intro.ctaLabel}</Button></div>
         </div>
 
         <div>
           <PriceList items={tarifs} />
-          <p class="price-note">Possibilité de <strong>bons cadeaux</strong> et de <strong>forfaits</strong> : n'hésitez pas à me contacter. Certaines mutuelles remboursent les séances de Shiatsu.</p>
+          <p class="price-note">{@html page.priceNote}</p>
         </div>
       </div>
     </div>
@@ -45,11 +44,11 @@
 
   <!-- ENCART BON CADEAU -->
   <CtaSection
-    overline="Bon cadeau"
-    title="Envie d'offrir un <em>moment&nbsp;?</em>"
-    lead="Offrez le soin de son choix : massage, shiatsu ou moment de détente. Bon cadeau remis en main propre, par e-mail ou par courrier."
-    image="/images/ambiance/espace-soin.webp"
-    imageAlt="Détail apaisé d'un espace de soin"
+    overline={page.cta.overline}
+    title={page.cta.title}
+    lead={page.cta.lead}
+    image={page.cta.image}
+    imageAlt={page.cta.imageAlt}
     actions={[{ label: 'Découvrir le bon cadeau', href: '/bon-cadeau', variant: 'secondary', arrow: true }]}
   />
 

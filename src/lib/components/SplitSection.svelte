@@ -6,7 +6,7 @@
   // Bloc « prestation » : texte + image côte à côte (page Prestations).
   //  Toutes les valeurs viennent d'un objet de src/lib/data/prestations.js (blocs).
   //  reverse : inverse texte/image. mebp : accent bleu + zone dédiée.
-  //  badge   : place le badge MEBP® et sort le titre au-dessus du bloc.
+  //  badge   : ajoute le badge « Praticienne certifiée MEBP® » en tête de colonne.
   let {
     index,
     eyebrow,
@@ -26,27 +26,15 @@
 </script>
 
 <section class="section {sectionClass}" class:mebp-zone={mebp} id={anchor}>
-  <div class="container container--wide" class:stack-lg={badge}>
-    {#if badge}
-      <div use:reveal style="max-width:62ch">
-        <MebpBadge />
-        <div class="care__eyebrow" style="margin-top:var(--space-6)">
+  <div class="container container--wide">
+    <div class="care" class:care--reverse={reverse} use:reveal>
+      <div class="stack">
+        {#if badge}<div style="margin-bottom:var(--space-2)"><MebpBadge /></div>{/if}
+        <div class="care__eyebrow">
           <span class="index-num" style={mebp ? 'color:var(--blue-300)' : ''}>{index}</span>
           <p class="overline" class:overline--mebp={mebp}>{eyebrow}</p>
         </div>
-        <h2 style="margin-top:var(--space-3)">{@html title}</h2>
-      </div>
-    {/if}
-
-    <div class="care" class:care--reverse={reverse} use:reveal>
-      <div class="stack">
-        {#if !badge}
-          <div class="care__eyebrow">
-            <span class="index-num">{index}</span>
-            <p class="overline">{eyebrow}</p>
-          </div>
-          <h2>{@html title}</h2>
-        {/if}
+        <h2>{@html title}</h2>
         <p class="lead measure">{body}</p>
         {#if note}<p class="small muted">{note}</p>{/if}
         <div class="btn-group">

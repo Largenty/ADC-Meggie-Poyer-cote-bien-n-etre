@@ -1,0 +1,43 @@
+{
+  "seo": {
+    "title": "Bon cadeau bien-être | Côté Bien N'être — Brie-Comte-Robert",
+    "description": "Offrez un bon cadeau bien-être : massage, shiatsu ou détente à Brie-Comte-Robert. Valable 6 mois. Remise en mains propres au cabinet ou envoi par e-mail. Paiement par Wero ou virement."
+  },
+  "hero": {
+    "overline": "Bon cadeau",
+    "title": "Offrez <em>du temps</em>",
+    "lead": "Un bon cadeau Côté Bien N'être, c'est un vrai temps pour soi : la prestation de votre choix, à offrir tout simplement.",
+    "image": "/images/ambiance/bon-cadeau.webp",
+    "imageAlt": "Bon cadeau Côté Bien N'être, posé dans une ambiance douce et chaleureuse"
+  },
+  "commentCaMarche": {
+    "overline": "Comment ça marche",
+    "title": "En trois<br />étapes",
+    "lead": "Pour offrir un bon cadeau, il suffit de remplir le formulaire de contact. Je m'occupe du reste.",
+    "ctaLabel": "Demander un bon cadeau"
+  },
+  "aPreciser": {
+    "overline": "À préciser dans le formulaire",
+    "title": "Ce dont j'ai besoin",
+    "items": [
+      "La prestation choisie",
+      "Le prénom de la personne à qui vous l'offrez",
+      "Votre prénom",
+      "Un message, si vous souhaitez que je l'écrive pour vous"
+    ]
+  },
+  "remise": {
+    "overline": "Remise & paiement",
+    "title": "Comment le recevoir",
+    "pickup": "À venir récupérer au cabinet",
+    "email": "Ou envoi par e-mail, après paiement",
+    "note": "Valable 6 mois. Paiement par Wero ou virement."
+  },
+  "cta": {
+    "overline": "Prêt à offrir&nbsp;?",
+    "title": "Offrez un moment <em>rien qu'à elle.</em>",
+    "lead": "Un vrai temps pour soi, à la bonne personne, au bon moment. Remplissez le formulaire et je prépare votre bon cadeau.",
+    "image": "/images/prestations/massage-bien-etre.webp",
+    "imageAlt": "Moment de détente lors d'un soin"
+  }
+}

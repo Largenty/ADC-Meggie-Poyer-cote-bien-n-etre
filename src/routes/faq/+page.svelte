@@ -5,6 +5,9 @@
   import Seo from '$lib/components/Seo.svelte';
   import { faq } from '$lib/data/faq.js';
   import { site } from '$lib/data/site.js';
+  // Textes de la page éditables depuis /admin → content/pages/faq.json
+  // (les questions/réponses sont dans la rubrique « Foire aux questions »).
+  import page from '../../../content/pages/faq.json';
 
   // Données structurées FAQPage (rich results Google).
   const schema = {
@@ -19,10 +22,7 @@
   const jsonLd = JSON.stringify(schema).replace(/</g, '\\u003c');
 </script>
 
-<Seo
-  title="Questions fréquentes (FAQ) | Côté Bien N'être — Brie-Comte-Robert"
-  description="Shiatsu, massage bien-être, femme enceinte, Technique MEBP® : déroulé des séances, tarifs, réservation, paiement. Toutes vos questions à Brie-Comte-Robert."
-/>
+<Seo title={page.seo.title} description={page.seo.description} />
 
 <svelte:head>
   {@html `<script type="application/ld+json">${jsonLd}</script>`}
@@ -31,11 +31,11 @@
 <main id="main">
 
   <PageHero
-    overline="Questions fréquentes"
-    title="Vos questions, <em>mes réponses</em>"
-    lead="Le déroulé des séances, les tarifs, la réservation… Si vous ne trouvez pas votre réponse, écrivez-moi."
-    imgSrc="/images/hero/prestations.webp"
-    imgAlt="Espace de soin calme et lumineux"
+    overline={page.hero.overline}
+    title={page.hero.title}
+    lead={page.hero.lead}
+    imgSrc={page.hero.image}
+    imgAlt={page.hero.imageAlt}
   />
 
   <section class="section">
@@ -57,11 +57,11 @@
   </section>
 
   <CtaSection
-    overline="Une autre question&nbsp;?"
-    title="Parlons-en <em>simplement.</em>"
-    lead="Écrivez-moi ou réservez directement votre créneau, je m'occupe du reste."
-    image="/images/ambiance/espace-soin.webp"
-    imageAlt="Détail apaisé d'un espace de soin"
+    overline={page.cta.overline}
+    title={page.cta.title}
+    lead={page.cta.lead}
+    image={page.cta.image}
+    imageAlt={page.cta.imageAlt}
     actions={[
       { label: 'Réserver', href: site.booking },
       { label: 'Me contacter', href: '/contact', variant: 'secondary' },

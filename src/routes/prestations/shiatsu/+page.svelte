@@ -6,29 +6,22 @@
   import CtaSection from '$lib/components/CtaSection.svelte';
   import { site } from '$lib/data/site.js';
   import Seo from '$lib/components/Seo.svelte';
+  // Textes éditables depuis /admin → content/pages/shiatsu.json
+  import page from '../../../../content/pages/shiatsu.json';
 
-  const maux = [
-    'Les migraines',
-    'Les problèmes de sommeil',
-    'Les problèmes digestifs',
-    'Les maux de dos',
-    'Les douleurs articulaires…',
-  ];
+  const maux = page.quEstCe.maux;
 </script>
 
-<Seo
-  title="Le Shiatsu à Brie-Comte-Robert | Côté Bien N'être"
-  description="Issu de la médecine chinoise, le Shiatsu rééquilibre l'énergie du corps par des points de pression le long des méridiens. Migraines, sommeil, digestion, dos, articulations : découvrez la séance à Brie-Comte-Robert."
-/>
+<Seo title={page.seo.title} description={page.seo.description} />
 
 <main id="main">
 
   <PageHero
-    overline="Prestation"
-    title="Le <em>Shiatsu</em>"
-    lead="Rééquilibrer l'énergie du corps, soulager les tensions profondes, retrouver le calme."
-    imgSrc="/images/hero/prestations.webp"
-    imgAlt="Pressions le long des méridiens lors d'une séance de shiatsu"
+    overline={page.hero.overline}
+    title={page.hero.title}
+    lead={page.hero.lead}
+    imgSrc={page.hero.image}
+    imgAlt={page.hero.imageAlt}
   />
 
   <!-- QU'EST-CE QUE LE SHIATSU -->
@@ -36,12 +29,12 @@
     <div class="container container--wide">
       <div class="concept" style="align-items:start">
         <div class="stack" use:reveal>
-          <p class="overline">Une technique énergétique</p>
-          <h2>Qu'est-ce que le Shiatsu&nbsp;?</h2>
-          <p class="lead measure">Issu de la médecine chinoise, le Shiatsu est une technique utilisant des points de pression le long des méridiens énergétiques, afin de rééquilibrer toute l'énergie du corps.</p>
+          <p class="overline">{page.quEstCe.overline}</p>
+          <h2>{@html page.quEstCe.title}</h2>
+          <p class="lead measure">{page.quEstCe.lead}</p>
         </div>
         <div class="stack" use:reveal={1}>
-          <p class="overline">Le Shiatsu peut vous aider à soulager</p>
+          <p class="overline">{page.quEstCe.mauxOverline}</p>
           <ul class="check-list">
             {#each maux as m}
               <li><Icon name="check" size="22" /> {m}</li>
@@ -56,11 +49,11 @@
   <section class="section">
     <div class="container container--wide">
       <div class="stack" use:reveal>
-        <p class="overline">Comment se passe une séance</p>
-        <h2>Le déroulé</h2>
-        <p class="lead">Après vous avoir posé un certain nombre de questions visant à orienter mon Shiatsu en fonction de vos besoins, vous vous installez sur un tatami confortable. Vous restez habillé pendant toute la séance <em>(prévoir des vêtements souples)</em>.</p>
-        <p>J'effectue des pressions plus ou moins légères avec les mains ou les pouces sur des points stratégiques.</p>
-        <div class="btn-group"><Button href={site.booking} arrow>Réserver une séance de Shiatsu</Button></div>
+        <p class="overline">{page.deroule.overline}</p>
+        <h2>{page.deroule.title}</h2>
+        <p class="lead">{@html page.deroule.lead}</p>
+        <p>{page.deroule.text2}</p>
+        <div class="btn-group"><Button href={site.booking} arrow>{page.deroule.ctaLabel}</Button></div>
       </div>
     </div>
   </section>
@@ -69,21 +62,21 @@
   <section class="section section--soft">
     <div class="container container--wide">
       <div class="stack" use:reveal>
-        <p class="overline">Sur-mesure</p>
-        <h2>Le massage bien-être</h2>
-        <p class="lead">Dans le monde du massage depuis des années, j'ai pu pratiquer différentes techniques et je peux vous proposer des massages bien-être sur-mesure, adaptés à vos envies, afin de soulager tout le corps de ses tensions et repartir plus léger(ère).</p>
-        <p>Massage bien-être à l'huile de coco bio ou à l'huile bio neutre. La pression est adaptée à vos envies et à vos besoins du moment.</p>
+        <p class="overline">{page.massage.overline}</p>
+        <h2>{page.massage.title}</h2>
+        <p class="lead">{page.massage.lead}</p>
+        <p>{page.massage.text2}</p>
       </div>
     </div>
   </section>
 
   <!-- CTA -->
   <CtaSection
-    overline="Un temps pour soi"
-    title="Envie d'une vraie <em>parenthèse&nbsp;?</em>"
-    lead="Réservez votre créneau, j'adapte le soin à ce que votre corps demande."
-    image="/images/ambiance/espace-soin.webp"
-    imageAlt="Le cabinet de soin, ambiance calme et naturelle"
+    overline={page.cta.overline}
+    title={page.cta.title}
+    lead={page.cta.lead}
+    image={page.cta.image}
+    imageAlt={page.cta.imageAlt}
     actions={[
       { label: 'Réserver', href: site.booking },
       { label: 'Voir les tarifs', href: '/tarifs', variant: 'secondary' },

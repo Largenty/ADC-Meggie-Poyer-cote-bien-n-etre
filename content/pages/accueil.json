@@ -1,0 +1,35 @@
+{
+  "seo": {
+    "title": "Shiatsu & massage bien-être à Brie-Comte-Robert | Côté Bien N'être",
+    "description": "Praticienne shiatsu, massage bien-être et femme enceinte à Brie-Comte-Robert (77). Vous réservez un temps, j'adapte le soin sur place. Note 5/5. Réservez en ligne."
+  },
+  "hero": {
+    "overline": "Shiatsu & massage bien-être",
+    "title": "Un temps pour vous",
+    "sub": "Une pause pour le corps, un soin pour l'esprit.",
+    "imageAlt": "Le cabinet de soin Côté Bien N'être à Brie-Comte-Robert : table de massage, fauteuil et décor naturel aux tons verts"
+  },
+  "concept": {
+    "overline": "Une approche, pas un catalogue",
+    "title": "Vous ne choisissez pas une technique.<br />Vous choisissez <em>du temps.</em>",
+    "lead": "Pas besoin de savoir si vous avez « besoin » d'un shiatsu ou d'un massage. Vous réservez un format. Sur place, j'adapte le soin à ce que votre corps demande : pressions, étirements, gestes lents."
+  },
+  "pourQui": {
+    "overline": "Pour qui&nbsp;?",
+    "title": "Un soin qui s'adapte à chacun",
+    "lead": "Hommes et femmes, femmes enceintes, enfants à besoins particuliers."
+  },
+  "enPratique": {
+    "overline": "En pratique",
+    "title": "Comment ça se passe",
+    "lead": "Trois étapes simples, et vous repartez détendue.",
+    "ctaLabel": "Voir les créneaux disponibles"
+  },
+  "cta": {
+    "overline": "Un temps pour soi",
+    "title": "Offrez-vous une vraie <em>pause.</em>",
+    "lead": "Réservez votre créneau, ou découvrez les tarifs des séances.",
+    "image": "/images/ambiance/espace-soin.webp",
+    "imageAlt": "Le cabinet de soin, ambiance calme et naturelle"
+  }
+}

@@ -7,21 +7,20 @@
   import CtaSection from '$lib/components/CtaSection.svelte';
   import { giftSteps } from '$lib/data/steps.js';
   import Seo from '$lib/components/Seo.svelte';
+  // Textes éditables depuis /admin → content/pages/bon-cadeau.json
+  import page from '../../../content/pages/bon-cadeau.json';
 </script>
 
-<Seo
-  title="Bon cadeau bien-être | Côté Bien N'être — Brie-Comte-Robert"
-  description="Offrez un bon cadeau bien-être : massage, shiatsu ou détente à Brie-Comte-Robert. Valable 6 mois. Remise en mains propres au cabinet ou envoi par e-mail. Paiement par Wero ou virement."
-/>
+<Seo title={page.seo.title} description={page.seo.description} />
 
 <main id="main">
 
   <PageHero
-    overline="Bon cadeau"
-    title="Offrez <em>du temps</em>"
-    lead="Un bon cadeau Côté Bien N'être, c'est un vrai temps pour soi : la prestation de votre choix, à offrir tout simplement."
-    imgSrc="/images/ambiance/bon-cadeau.webp"
-    imgAlt="Bon cadeau Côté Bien N'être, posé dans une ambiance douce et chaleureuse"
+    overline={page.hero.overline}
+    title={page.hero.title}
+    lead={page.hero.lead}
+    imgSrc={page.hero.image}
+    imgAlt={page.hero.imageAlt}
   />
 
   <!-- COMMENT ÇA MARCHE -->
@@ -29,10 +28,10 @@
     <div class="container container--wide">
       <div class="concept" style="align-items:start">
         <div class="stack" use:reveal>
-          <p class="overline">Comment ça marche</p>
-          <h2>En trois<br />étapes</h2>
-          <p class="lead measure-sm">Pour offrir un bon cadeau, il suffit de remplir le formulaire de contact. Je m'occupe du reste.</p>
-          <div class="btn-group"><Button href="/contact" arrow>Demander un bon cadeau</Button></div>
+          <p class="overline">{page.commentCaMarche.overline}</p>
+          <h2>{@html page.commentCaMarche.title}</h2>
+          <p class="lead measure-sm">{page.commentCaMarche.lead}</p>
+          <div class="btn-group"><Button href="/contact" arrow>{page.commentCaMarche.ctaLabel}</Button></div>
         </div>
         <Steps steps={giftSteps} />
       </div>
@@ -44,23 +43,22 @@
     <div class="container container--wide">
       <div class="concept" style="align-items:start">
         <div class="stack" use:reveal>
-          <p class="overline">À préciser dans le formulaire</p>
-          <h2 style="margin-bottom:var(--space-8)">Ce dont j'ai besoin</h2>
+          <p class="overline">{page.aPreciser.overline}</p>
+          <h2 style="margin-bottom:var(--space-8)">{page.aPreciser.title}</h2>
           <ul class="check-list">
-            <li><Icon name="check" size="22" /> La prestation choisie</li>
-            <li><Icon name="check" size="22" /> Le prénom de la personne à qui vous l'offrez</li>
-            <li><Icon name="check" size="22" /> Votre prénom</li>
-            <li><Icon name="check" size="22" /> Un message, si vous souhaitez que je l'écrive pour vous</li>
+            {#each page.aPreciser.items as item}
+              <li><Icon name="check" size="22" /> {item}</li>
+            {/each}
           </ul>
         </div>
         <div class="stack" use:reveal={1}>
-          <p class="overline">Remise &amp; paiement</p>
-          <h2 style="margin-bottom:var(--space-8)">Comment le recevoir</h2>
+          <p class="overline">{page.remise.overline}</p>
+          <h2 style="margin-bottom:var(--space-8)">{page.remise.title}</h2>
           <ul class="info-list">
-            <li><span class="icon-circle" aria-hidden="true"><Icon name="pin" /></span> À venir récupérer au cabinet</li>
-            <li><span class="icon-circle" aria-hidden="true"><Icon name="mail" /></span> Ou envoi par e-mail, après paiement</li>
+            <li><span class="icon-circle" aria-hidden="true"><Icon name="pin" /></span> {page.remise.pickup}</li>
+            <li><span class="icon-circle" aria-hidden="true"><Icon name="mail" /></span> {page.remise.email}</li>
           </ul>
-          <p class="small muted">Valable 6 mois. Paiement par Wero ou virement.</p>
+          <p class="small muted">{page.remise.note}</p>
         </div>
       </div>
     </div>
@@ -68,11 +66,11 @@
 
   <!-- APPEL FINAL -->
   <CtaSection
-    overline="Prêt à offrir&nbsp;?"
-    title="Offrez un moment <em>rien qu'à elle.</em>"
-    lead="Un vrai temps pour soi, à la bonne personne, au bon moment. Remplissez le formulaire et je prépare votre bon cadeau."
-    image="/images/prestations/massage-bien-etre.webp"
-    imageAlt="Moment de détente lors d'un soin"
+    overline={page.cta.overline}
+    title={page.cta.title}
+    lead={page.cta.lead}
+    image={page.cta.image}
+    imageAlt={page.cta.imageAlt}
     actions={[{ label: 'Demander un bon cadeau', href: '/contact', arrow: true }]}
   />
 

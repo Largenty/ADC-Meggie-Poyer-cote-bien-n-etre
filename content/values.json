@@ -1,0 +1,7 @@
+{
+  "items": [
+    { "icon": "listen", "title": "Écoute", "text": "Quelques mots en arrivant suffisent. Le soin part de vous, de votre journée, de vos tensions." },
+    { "icon": "adapt", "title": "Adaptation", "text": "Shiatsu, massage, ou les deux. J’ajuste les gestes en cours de séance, sans menu figé." },
+    { "icon": "heart", "title": "Douceur", "text": "Un cadre calme et sécurisant, des futures mamans aux enfants à besoins particuliers." }
+  ]
+}

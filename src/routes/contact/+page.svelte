@@ -6,29 +6,28 @@
   import InfoList from '$lib/components/InfoList.svelte';
   import MapEmbed from '$lib/components/MapEmbed.svelte';
   import Seo from '$lib/components/Seo.svelte';
+  // Textes éditables depuis /admin → content/pages/contact.json
+  import page from '../../../content/pages/contact.json';
 </script>
 
-<Seo
-  title="Contact & réservation | Côté Bien N'être — Brie-Comte-Robert"
-  description="Réservez votre séance de shiatsu ou massage à Brie-Comte-Robert (6 Passage du Roi, 77170). Réservation en ligne Resalib, formulaire de contact, téléphone."
-/>
+<Seo title={page.seo.title} description={page.seo.description} />
 
 <main id="main">
 
   <PageHero
-    overline="Prenons rendez-vous"
-    title="Prendre <em>rendez-vous</em>"
-    lead="Le plus simple : réservez directement votre créneau en ligne. Une question avant de venir ? Écrivez-moi."
-    imgSrc="/images/hero/contact.webp"
-    imgAlt="Massage bien-être du dos, ambiance douce et chaleureuse"
+    overline={page.hero.overline}
+    title={page.hero.title}
+    lead={page.hero.lead}
+    imgSrc={page.hero.image}
+    imgAlt={page.hero.imageAlt}
   />
 
   <!-- RÉSERVATION -->
   <section class="section" id="reservation" aria-labelledby="reservation-title">
     <div class="container container--wide stack-lg">
       <div use:reveal>
-        <p class="overline">Réservation en ligne</p>
-        <h2 id="reservation-title" style="margin-top:var(--space-4)">Réservez votre créneau</h2>
+        <p class="overline">{page.reservation.overline}</p>
+        <h2 id="reservation-title" style="margin-top:var(--space-4)">{page.reservation.title}</h2>
       </div>
       <BookingEmbed />
     </div>
@@ -39,9 +38,9 @@
     <div class="container container--wide">
       <div class="concept" style="align-items:start">
         <div class="stack" use:reveal>
-          <p class="overline">Me contacter</p>
-          <h2 id="contact-title">Une question<br />avant de venir&nbsp;?</h2>
-          <p class="lead measure-sm">Écrivez-moi, je vous réponds au plus vite. Vous pouvez aussi m'appeler directement.</p>
+          <p class="overline">{page.contact.overline}</p>
+          <h2 id="contact-title">{@html page.contact.title}</h2>
+          <p class="lead measure-sm">{page.contact.lead}</p>
           <InfoList />
         </div>
         <div use:reveal={1}>
@@ -55,9 +54,9 @@
   <section class="section" aria-labelledby="zone-title">
     <div class="container container--wide stack-lg">
       <div use:reveal>
-        <p class="overline">Où me trouver</p>
-        <h2 id="zone-title" style="margin-top:var(--space-4)">Brie-Comte-Robert <em class="it" style="font-family:var(--font-display)">et 20 km autour</em></h2>
-        <p class="lead">Cabinet au 6 Passage du Roi, 77170 Brie-Comte-Robert. J'interviens aussi dans un rayon de 20 km autour. <span class="small muted">[À compléter : déplacements à domicile ? Horaires.]</span></p>
+        <p class="overline">{page.zone.overline}</p>
+        <h2 id="zone-title" style="margin-top:var(--space-4)">{@html page.zone.title}</h2>
+        <p class="lead">{page.zone.lead}</p>
       </div>
       <MapEmbed />
     </div>
