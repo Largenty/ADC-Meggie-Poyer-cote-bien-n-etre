@@ -6,7 +6,7 @@
   import CtaSection from '$lib/components/CtaSection.svelte';
   import { site } from '$lib/data/site.js';
   import Seo from '$lib/components/Seo.svelte';
-  // Textes éditables depuis /admin → content/pages/shiatsu.json
+  // Textes du contenu → content/pages/shiatsu.json
   import page from '../../../../content/pages/shiatsu.json';
 
   const maux = page.quEstCe.maux;

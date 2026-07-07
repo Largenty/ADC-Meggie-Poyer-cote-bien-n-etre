@@ -1,6 +1,6 @@
 // ============================================================
 //  « POUR QUI ? » — 3 cartes de la page d'accueil
-//  ⚠️ Éditable depuis /admin (Sveltia CMS) → `content/audiences.json`.
+//  Contenu éditable dans `content/audiences.json`.
 //  href / linkLabel : facultatif (lien « En savoir plus »).
 //  mebp : true pour la carte MEBP® (accent bleu).
 // ============================================================

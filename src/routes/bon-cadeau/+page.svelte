@@ -7,7 +7,7 @@
   import CtaSection from '$lib/components/CtaSection.svelte';
   import { giftSteps } from '$lib/data/steps.js';
   import Seo from '$lib/components/Seo.svelte';
-  // Textes éditables depuis /admin → content/pages/bon-cadeau.json
+  // Textes du contenu → content/pages/bon-cadeau.json
   import page from '../../../content/pages/bon-cadeau.json';
 </script>
 

@@ -7,7 +7,7 @@
   import { tarifs } from '$lib/data/prestations.js';
   import { site } from '$lib/data/site.js';
   import Seo from '$lib/components/Seo.svelte';
-  // Textes éditables depuis /admin → content/pages/tarifs.json
+  // Textes du contenu → content/pages/tarifs.json
   import page from '../../../content/pages/tarifs.json';
 </script>
 

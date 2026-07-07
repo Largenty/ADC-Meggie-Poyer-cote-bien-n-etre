@@ -1,6 +1,6 @@
 // ============================================================
 //  FOIRE AUX QUESTIONS
-//  ⚠️ Éditable depuis /admin (Sveltia CMS) → `content/faq.json`.
+//  Contenu éditable dans `content/faq.json`.
 //  Alimente la page /faq ET les données structurées FAQPage.
 // ============================================================
 

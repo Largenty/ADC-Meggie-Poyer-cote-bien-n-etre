@@ -5,7 +5,7 @@
   import Seo from '$lib/components/Seo.svelte';
   import { faq } from '$lib/data/faq.js';
   import { site } from '$lib/data/site.js';
-  // Textes de la page éditables depuis /admin → content/pages/faq.json
+  // Textes du contenu → content/pages/faq.json
   // (les questions/réponses sont dans la rubrique « Foire aux questions »).
   import page from '../../../content/pages/faq.json';
 

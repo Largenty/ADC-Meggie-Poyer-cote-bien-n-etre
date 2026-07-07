@@ -8,7 +8,7 @@
   import CtaSection from '$lib/components/CtaSection.svelte';
   import { site } from '$lib/data/site.js';
   import Seo from '$lib/components/Seo.svelte';
-  // Textes éditables depuis /admin → content/pages/mebp.json
+  // Textes du contenu → content/pages/mebp.json
   import page from '../../../../content/pages/mebp.json';
 
   const caracteristiques = page.quEstCe.caracteristiques;

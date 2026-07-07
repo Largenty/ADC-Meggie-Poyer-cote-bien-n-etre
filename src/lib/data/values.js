@@ -1,6 +1,6 @@
 // ============================================================
 //  « CE QUI ME GUIDE » — 3 principes (page À propos)
-//  ⚠️ Éditable depuis /admin (Sveltia CMS) → `content/values.json`.
+//  Contenu éditable dans `content/values.json`.
 //  icon : nom d'icône (voir src/lib/components/Icon.svelte)
 // ============================================================
 

@@ -11,7 +11,7 @@
   import { homeSteps } from '$lib/data/steps.js';
   import { site } from '$lib/data/site.js';
   import Seo from '$lib/components/Seo.svelte';
-  // Textes éditables depuis /admin → content/pages/accueil.json
+  // Textes du contenu → content/pages/accueil.json
   import page from '../../content/pages/accueil.json';
 </script>
 

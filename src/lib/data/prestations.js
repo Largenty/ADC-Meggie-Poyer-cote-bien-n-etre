@@ -1,6 +1,6 @@
 // ============================================================
 //  PRESTATIONS — SOURCE UNIQUE
-//  ⚠️ Éditable depuis /admin (Sveltia CMS) → `content/prestations.json`.
+//  Contenu éditable dans `content/prestations.json`.
 //  Alimente À LA FOIS :
 //   • la liste de prix de la page Tarifs  (tableau `tarifs`)
 //   • les grands blocs de la page Prestations (tableau `blocs`)

@@ -6,7 +6,7 @@
   import { blocs } from '$lib/data/prestations.js';
   import { site } from '$lib/data/site.js';
   import Seo from '$lib/components/Seo.svelte';
-  // Textes de la page éditables depuis /admin → content/pages/prestations.json
+  // Textes du contenu → content/pages/prestations.json
   // (les blocs eux-mêmes sont dans la rubrique « Prestations & tarifs »).
   import page from '../../../content/pages/prestations.json';
 

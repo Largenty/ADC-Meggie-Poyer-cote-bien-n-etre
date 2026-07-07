@@ -11,7 +11,7 @@
   import { values } from '$lib/data/values.js';
   import { site } from '$lib/data/site.js';
   import Seo from '$lib/components/Seo.svelte';
-  // Textes éditables depuis /admin → content/pages/apropos.json
+  // Textes du contenu → content/pages/apropos.json
   import page from '../../../content/pages/apropos.json';
 </script>
 
